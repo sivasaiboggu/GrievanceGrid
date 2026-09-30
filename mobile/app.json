@@ -1,0 +1,47 @@
+{
+  "expo": {
+    "name": "GrievanceGrid",
+    "slug": "grievancegrid-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "scheme": "grievancegrid",
+    "splash": {
+      "backgroundColor": "#000412"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "in.gov.grievancegrid"
+    },
+    "android": {
+      "package": "in.gov.grievancegrid",
+      "adaptiveIcon": {
+        "backgroundColor": "#000412"
+      },
+      "permissions": [
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION"
+      ]
+    },
+    "plugins": [
+      "expo-dev-client",
+      "expo-status-bar",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "GrievanceGrid requires access to your photos to attach verified grievance evidence.",
+          "cameraPermission": "GrievanceGrid requires access to your camera to photograph on-site municipal damage."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "GrievanceGrid requires location access to establish precise municipal coordinates for grievance routing."
+        }
+      ]
+    ]
+  }
+}

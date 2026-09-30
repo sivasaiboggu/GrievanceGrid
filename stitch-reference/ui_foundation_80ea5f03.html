@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-dim": "#cbdbf5", "error": "#ba1a1a", "primary-fixed-dim": "#b8c7e6", "surface": "#f8f9ff", "on-secondary-fixed-variant": "#173bab", "surface-container-highest": "#d3e4fe", "inverse-surface": "#213145", "tertiary-container": "#001950", "tertiary-fixed-dim": "#b4c5ff", "on-error-container": "#93000a", "on-primary-fixed-variant": "#394761", "secondary-fixed-dim": "#b8c4ff", "outline": "#75777e", "on-primary-container": "#7886a3", "surface-container-lowest": "#ffffff", "surface-container-high": "#dce9ff", "secondary-fixed": "#dde1ff", "tertiary-fixed": "#dbe1ff", "surface-container": "#e5eeff", "on-background": "#0b1c30", "surface-container-low": "#eff4ff", "on-tertiary": "#ffffff", "on-surface-variant": "#44474d", "primary-container": "#0f1e36", "on-tertiary-fixed": "#00174b", "on-primary": "#ffffff", "primary-fixed": "#d7e3ff", "surface-variant": "#d3e4fe", "on-error": "#ffffff", "on-primary-fixed": "#0c1b33", "error-container": "#ffdad6", "on-secondary-container": "#00217a", "primary": "#000412", "inverse-primary": "#b8c7e6", "surface-bright": "#f8f9ff", "on-tertiary-container": "#4c7eff", "secondary-container": "#708cfd", "secondary": "#3755c3", "outline-variant": "#c5c6ce", "on-tertiary-fixed-variant": "#003ea8", "on-surface": "#0b1c30", "background": "#f8f9ff", "surface-tint": "#515f7a", "tertiary": "#000315", "on-secondary": "#ffffff", "on-secondary-fixed": "#001453", "inverse-on-surface": "#eaf1ff" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin": "1rem", "space-lg": "1.5rem", "space-sm": "0.75rem", "margin-desktop": "2rem", "space-xl": "2rem", "space-2xs": "0.25rem", "gutter": "1rem", "margin-tablet": "1.5rem", "space-2xl": "3rem", "space-xs": "0.5rem", "gutter-desktop": "1.5rem", "space-md": "1rem" }, "fontFamily": { "body-lg": ["Inter"], "body-md": ["Inter"], "label-code": ["JetBrains Mono"], "label-lg": ["Inter"], "display-lg": ["Inter"], "headline-md": ["Inter"], "headline-sm": ["Inter"], "label-md": ["Inter"], "display-lg-mobile": ["Inter"], "caption": ["Inter"], "body-sm": ["Inter"], "headline-lg": ["Inter"] }, "fontSize": { "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "label-code": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "500" }], "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "display-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "caption": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "500" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }] } } } }</script><style>@layer base{html,body{width:100%;margin:0;padding:0;min-height:100%;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="GrievanceGrid Civic Logo" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1VUN8yEldDZBPLYZ_zx4PznHj5Vcmqe1Ys5eXQqvnGt275S4w2W7PgS36N04xwzBmI97hLKZ-NGZxChrQc_JKT3IU2GUZsvYwS3exeyHChoFwwMiEUsAzdTdCdrU6hcsdY_qqf-lzqbdKb_vFAY-e7sAakwF8IxMY4B0-Sg88Zg_7YAT0oV7MGTcNWMTAK71czgl6sUZ2RwroKugeHXEdOhtaVFdAFnAjzD5sLA8JoMuMEH55ux7XCQ9w"/><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-2xs"><span class="font-headline-sm text-headline-sm text-on-surface truncate tracking-tight">Complaints</span></div><span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider truncate">Metro Civic Services • Ward 4</span></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><div class="hidden sm:flex items-center gap-space-2xs px-space-xs py-space-2xs rounded bg-surface-container-low text-on-surface-variant font-label-code text-label-code"><span class="w-2 h-2 rounded-full bg-secondary"></span><span>OPERATIONAL</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="px-margin py-space-md flex flex-col gap-space-lg">
+<!-- Section 1: Platform Foundation & Civic Principles -->
+<section class="flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-xs text-secondary">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span class="font-label-code text-label-code uppercase tracking-wider">Civic Standards v1.0 • Spec 2025</span>
+</div>
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">UI Foundation &amp; Component Architecture</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">GrievanceGrid Civic Resolution System • Standards v1.0</p>
+</div>
+<!-- Guiding Principle Notice Box -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex items-start gap-space-sm shadow-sm">
+<span class="material-symbols-outlined text-secondary flex-shrink-0 mt-0.5 text-[20px]">balance</span>
+<div class="flex flex-col gap-space-2xs min-w-0">
+<span class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Statutory Operating Principle</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+<strong class="font-medium text-on-surface">Notice:</strong> AI models provide candidate decomposition and routing suggestions. Authorized municipal officers verify all evidence, work orders, and resolution determinations.
+          </p>
+</div>
+</div>
+<!-- 8-Stage Lifecycle Stepper -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Operational Lifecycle Stepper</span>
+<span class="font-label-code text-label-code text-on-surface-variant">8 Defined Phases</span>
+</div>
+<div class="overflow-x-auto pb-space-xs -mx-space-md px-space-md">
+<div class="flex items-center gap-space-xs min-w-[720px]">
+<!-- Stage 1 -->
+<div class="flex items-center gap-space-xs">
+<div class="flex flex-col items-center bg-surface-container-high px-space-xs py-space-2xs rounded-lg min-w-[78px] text-center">
+<span class="w-5 h-5 rounded-full bg-primary text-on-primary font-label-code text-caption flex items-center justify-center mb-1">01</span>
+<span class="font-caption text-caption text-on-surface leading-tight font-medium">Citizen Submits</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span>
+</div>
+<!-- Stage 2 -->
+<div class="flex items-center gap-space-xs">
+<div class="flex flex-col items-center bg-surface-container-high px-space-xs py-space-2xs rounded-lg min-w-[78px] text-center">
+<span class="w-5 h-5 rounded-full bg-primary text-on-primary font-label-code text-caption flex items-center justify-center mb-1">02</span>
+<span class="font-caption text-caption text-on-surface leading-tight font-medium">Decompose</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span>
+</div>
+<!-- Stage 3 -->
+<div class="flex items-center gap-space-xs">
+<div class="flex flex-col items-center bg-surface-container-high px-space-xs py-space-2xs rounded-lg min-w-[78px] text-center">
+<span class="w-5 h-5 rounded-full bg-primary text-on-primary font-label-code text-caption flex items-center justify-center mb-1">03</span>
+<span class="font-caption text-caption text-on-surface leading-tight font-medium">Evidence Audit</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span>
+</div>
+<!-- Stage 4 (Active/In focus) -->
+<div class="flex items-center gap-space-xs">
+<div class="flex flex-col items-center bg-secondary-container px-space-xs py-space-2xs rounded-lg min-w-[78px] text-center shadow-sm">
+<span class="w-5 h-5 rounded-full bg-secondary text-on-secondary font-label-code text-caption flex items-center justify-center mb-1">04</span>
+<span class="font-caption text-caption text-on-secondary-container leading-tight font-bold">Officer Verify</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-secondary">chevron_right</span>
+</div>
+<!-- Stage 5 -->
+<div class="flex items-center gap-space-xs">
+<div class="flex flex-col items-center bg-surface-container-low px-space-xs py-space-2xs rounded-lg min-w-[78px] text-center">
+<span class="w-5 h-5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-code text-caption flex items-center justify-center mb-1">05</span>
+<span class="font-caption text-caption text-on-surface-variant leading-tight font-medium">Work Order</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-outline-variant">chevron_right</span>
+</div>
+<!-- Stage 6 -->
+<div class="flex items-center gap-space-xs">
+<div class="flex flex-col items-center bg-surface-container-low px-space-xs py-space-2xs rounded-lg min-w-[78px] text-center">
+<span class="w-5 h-5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-code text-caption flex items-center justify-center mb-1">06</span>
+<span class="font-caption text-caption text-on-surface-variant leading-tight font-medium">Field Exec</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-outline-variant">chevron_right</span>
+</div>
+<!-- Stage 7 -->
+<div class="flex items-center gap-space-xs">
+<div class="flex flex-col items-center bg-surface-container-low px-space-xs py-space-2xs rounded-lg min-w-[78px] text-center">
+<span class="w-5 h-5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-code text-caption flex items-center justify-center mb-1">07</span>
+<span class="font-caption text-caption text-on-surface-variant leading-tight font-medium">Completion</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-outline-variant">chevron_right</span>
+</div>
+<!-- Stage 8 -->
+<div class="flex items-center">
+<div class="flex flex-col items-center bg-surface-container-low px-space-xs py-space-2xs rounded-lg min-w-[78px] text-center">
+<span class="w-5 h-5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-code text-caption flex items-center justify-center mb-1">08</span>
+<span class="font-caption text-caption text-on-surface-variant leading-tight font-medium">Final Record</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Color & Typography Tokens -->
+<section class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Tokens: Palette &amp; Type Scale</h2>
+<span class="font-caption text-caption text-on-surface-variant uppercase">Design System Core</span>
+</div>
+<!-- Color Swatches Grid -->
+<div class="grid grid-cols-2 gap-space-xs">
+<div class="bg-surface-container-lowest p-space-sm rounded-xl shadow-sm flex flex-col gap-space-xs">
+<div class="h-10 rounded-lg bg-primary-container flex items-center px-space-xs justify-between">
+<span class="font-label-code text-caption text-on-primary">#0F1E36</span>
+<span class="material-symbols-outlined text-on-primary text-[16px]">shield</span>
+</div>
+<div>
+<span class="font-label-md text-label-md text-on-surface font-semibold block">Deep Ink Navy</span>
+<span class="font-caption text-caption text-on-surface-variant">Primary Authority &amp; Shells</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded-xl shadow-sm flex flex-col gap-space-xs">
+<div class="h-10 rounded-lg bg-secondary flex items-center px-space-xs justify-between">
+<span class="font-label-code text-caption text-on-secondary">#3755C3</span>
+<span class="material-symbols-outlined text-on-secondary text-[16px]">touch_app</span>
+</div>
+<div>
+<span class="font-label-md text-label-md text-on-surface font-semibold block">Civic Blue</span>
+<span class="font-caption text-caption text-on-surface-variant">Interaction, Links &amp; Focus</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded-xl shadow-sm flex flex-col gap-space-xs">
+<div class="h-10 rounded-lg bg-surface-container-highest flex items-center px-space-xs justify-between">
+<span class="font-label-code text-caption text-on-surface">#D3E4FE</span>
+<span class="material-symbols-outlined text-on-surface text-[16px]">layers</span>
+</div>
+<div>
+<span class="font-label-md text-label-md text-on-surface font-semibold block">Slate Surface Low</span>
+<span class="font-caption text-caption text-on-surface-variant">Canvas Ground &amp; Dividers</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded-xl shadow-sm flex flex-col gap-space-xs">
+<div class="h-10 rounded-lg bg-error flex items-center px-space-xs justify-between">
+<span class="font-label-code text-caption text-on-error">#BA1A1A</span>
+<span class="material-symbols-outlined text-on-error text-[16px]">warning</span>
+</div>
+<div>
+<span class="font-label-md text-label-md text-on-surface font-semibold block">Alert / Flag</span>
+<span class="font-caption text-caption text-on-surface-variant">SLA Breach &amp; Escalation</span>
+</div>
+</div>
+</div>
+<!-- Typography Showcase Card -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between pb-space-xs bg-surface-container-low/50 px-space-xs py-space-2xs rounded">
+<span class="font-label-code text-caption text-on-surface-variant">TYPE SPECIMEN</span>
+<span class="font-label-code text-label-code text-secondary font-semibold">GG-2025-0894</span>
+</div>
+<div class="flex flex-col gap-space-2xs">
+<span class="font-caption text-caption text-on-surface-variant uppercase">Headline Lg (24px, Semibold)</span>
+<p class="font-headline-lg text-headline-lg text-on-surface">Public Municipal Grid Interface</p>
+</div>
+<div class="flex flex-col gap-space-2xs">
+<span class="font-caption text-caption text-on-surface-variant uppercase">Headline Sm &amp; Tabular Case ID</span>
+<p class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-space-xs">
+<span>Downtime Audit</span>
+<span class="font-label-code text-label-code px-space-xs py-0.5 rounded bg-surface-container-high text-on-surface">CASE #GG-2025-0894</span>
+</p>
+</div>
+<div class="flex flex-col gap-space-2xs">
+<span class="font-caption text-caption text-on-surface-variant uppercase">Body Medium (14px/20px)</span>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            All records archived in the grievance ledger comply with statutory municipal record mandates. Digital timestamps are tamper-checked.
+          </p>
+</div>
+</div>
+</section>
+<!-- Section 3: Core Interactive Components -->
+<section class="flex flex-col gap-space-sm">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Core Interactive Controls</h2>
+<!-- Buttons Palette -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm">
+<span class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Button Variations</span>
+<div class="flex flex-col gap-space-xs">
+<!-- Primary Municipal Action -->
+<button class="w-full bg-primary text-on-primary h-11 px-space-md rounded-lg flex items-center justify-center gap-space-xs font-label-lg text-label-lg active:opacity-90 shadow-sm transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Verify &amp; Issue Work Order</span>
+</button>
+<!-- Secondary Operational Ghost -->
+<button class="w-full bg-surface-container-high text-on-surface h-11 px-space-md rounded-lg flex items-center justify-center gap-space-xs font-label-lg text-label-lg active:bg-surface-container-highest transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+<span>Inspect Provenance Metadata</span>
+</button>
+<!-- Destructive / Escalation Action -->
+<button class="w-full bg-error-container text-on-error-container h-11 px-space-md rounded-lg flex items-center justify-center gap-space-xs font-label-lg text-label-lg active:opacity-80 transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">flag</span>
+<span>Flag Context Mismatch / Escalate</span>
+</button>
+<!-- Action in Progress (Spinner) -->
+<button class="w-full bg-surface-container text-on-surface-variant h-11 px-space-md rounded-lg flex items-center justify-center gap-space-xs font-label-lg text-label-lg cursor-not-allowed" disabled="" type="button">
+<svg class="animate-spin h-4 w-4 text-secondary" fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+<path class="opacity-75" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" fill="currentColor"></path>
+</svg>
+<span>Synchronizing Municipal Ledger...</span>
+</button>
+<!-- Disabled State -->
+<button class="w-full bg-surface-container-low text-outline-variant h-11 px-space-md rounded-lg flex items-center justify-center gap-space-xs font-label-lg text-label-lg cursor-not-allowed" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span>Officer Clearance Required</span>
+</button>
+</div>
+</div>
+<!-- Inputs & Form System -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm">
+<span class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Civic Form Elements</span>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface flex items-center justify-between">
+<span>Location Descriptor <span class="text-error font-bold">*</span></span>
+<span class="font-caption text-caption text-on-surface-variant">Ward 4 Sector B</span>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined text-[18px] text-outline absolute left-3">pin_drop</span>
+<input class="w-full h-10 pl-9 pr-space-sm bg-surface-container-low rounded-lg text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none transition-colors" type="text" value="Clover &amp; 14th Ave Crosswalk"/>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Provide landmark, intersection or GPS cross-street for municipal dispatchers.</span>
+</div>
+<div class="flex flex-col gap-space-xs mt-space-2xs">
+<label class="font-label-md text-label-md text-on-surface">Search &amp; Filter Audit Ledger</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined text-[18px] text-outline absolute left-3">search</span>
+<input class="w-full h-10 pl-9 pr-20 bg-surface-container-low rounded-lg text-on-surface font-body-md text-body-md focus:outline-none" placeholder="Filter by Hash, Tag, or Ward..." type="search"/>
+<div class="absolute right-2 px-space-xs py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-code text-caption">
+              12 ACTIVE
+            </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Essential Multi-Status System -->
+<section class="flex flex-col gap-space-sm">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Multi-Status &amp; Provenance Badges</h2>
+<!-- 4A: Workflow Statuses -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-xs">
+<span class="font-label-md text-label-md text-on-surface uppercase tracking-wider mb-space-2xs">Workflow State Matrix</span>
+<div class="flex flex-wrap gap-space-xs">
+<div class="flex items-center gap-space-2xs px-space-xs py-1 rounded-md bg-surface-container-high text-on-surface font-label-code text-caption">
+<span class="material-symbols-outlined text-[14px]">inbox</span>
+<span>SUBMITTED</span>
+</div>
+<div class="flex items-center gap-space-2xs px-space-xs py-1 rounded-md bg-secondary-fixed text-on-secondary-fixed-variant font-label-code text-caption">
+<span class="material-symbols-outlined text-[14px]">badge</span>
+<span>ASSIGNED</span>
+</div>
+<div class="flex items-center gap-space-2xs px-space-xs py-1 rounded-md bg-surface-variant text-on-surface font-label-code text-caption">
+<span class="material-symbols-outlined text-[14px]">autorenew</span>
+<span>IN PROGRESS</span>
+</div>
+<div class="flex items-center gap-space-2xs px-space-xs py-1 rounded-md bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-code text-caption">
+<span class="material-symbols-outlined text-[14px]">hourglass_top</span>
+<span>AWAITING VERIFICATION</span>
+</div>
+<div class="flex items-center gap-space-2xs px-space-xs py-1 rounded-md bg-surface-container-highest text-on-surface font-label-code text-caption">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>RESOLVED</span>
+</div>
+<div class="flex items-center gap-space-2xs px-space-xs py-1 rounded-md bg-error-container text-on-error-container font-label-code text-caption">
+<span class="material-symbols-outlined text-[14px]">gavel</span>
+<span>UNDER APPEAL</span>
+</div>
+<div class="flex items-center gap-space-2xs px-space-xs py-1 rounded-md bg-error text-on-error font-label-code text-caption">
+<span class="material-symbols-outlined text-[14px]">timer_off</span>
+<span>OVERDUE SLA</span>
+</div>
+</div>
+</div>
+<!-- 4B: Evidence & Provenance States -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-xs">
+<span class="font-label-md text-label-md text-on-surface uppercase tracking-wider mb-space-2xs">Evidence &amp; Cryptographic Integrity</span>
+<div class="flex flex-col gap-space-xs">
+<!-- Verified Metadata -->
+<div class="flex items-center justify-between p-space-xs rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">verified</span>
+<span class="font-label-md text-label-md text-on-surface font-medium">Verified Metadata</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant font-label-code">EXIF + GPS Locked</span>
+</div>
+<!-- Metadata Unavailable -->
+<div class="flex items-center justify-between p-space-xs rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-outline text-[18px]">hide_image</span>
+<span class="font-label-md text-label-md text-on-surface font-medium">Metadata Unavailable</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant font-label-code">Device Stripped</span>
+</div>
+<!-- Provenance Found -->
+<div class="flex items-center justify-between p-space-xs rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">vpn_key</span>
+<span class="font-label-md text-label-md text-on-surface font-medium">Provenance Found</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant font-label-code">Ledger #4810A</span>
+</div>
+<!-- Potential Synthetic Risk -->
+<div class="flex items-center justify-between p-space-xs rounded-lg bg-error-container/60">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-error text-[18px]">warning</span>
+<span class="font-label-md text-label-md text-on-error-container font-semibold">Synthetic Risk Flag</span>
+</div>
+<span class="font-caption text-caption text-on-error-container font-label-code">Manual Audit Req</span>
+</div>
+<!-- Context Mismatch -->
+<div class="flex items-center justify-between p-space-xs rounded-lg bg-surface-container-high">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">wrong_location</span>
+<span class="font-label-md text-label-md text-on-surface font-medium">Context Mismatch</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant font-label-code">Geofence Delta &gt; 250m</span>
+</div>
+</div>
+</div>
+<!-- 4C: Issue-Level Resolution Coverage -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-xs">
+<span class="font-label-md text-label-md text-on-surface uppercase tracking-wider mb-space-2xs">Issue Resolution Coverage (Audited)</span>
+<div class="grid grid-cols-1 gap-space-xs">
+<!-- Addressed -->
+<div class="p-space-xs rounded-lg bg-surface-container-high flex flex-col gap-0.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-secondary text-[16px]">task_alt</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold uppercase">Addressed</span>
+</div>
+<span class="font-label-code text-caption text-secondary font-bold">100% Remediation</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Full photographic sign-off confirmed by municipal field inspector.</span>
+</div>
+<!-- Partial Coverage -->
+<div class="p-space-xs rounded-lg bg-surface-container-high flex flex-col gap-0.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-on-surface-variant text-[16px]">incomplete_circle</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold uppercase">Partial Coverage</span>
+</div>
+<span class="font-label-code text-caption text-on-surface-variant font-bold">Split Route</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Streetlight repaired; illicit waste pending secondary pickup crew.</span>
+</div>
+<!-- Not Addressed -->
+<div class="p-space-xs rounded-lg bg-surface-container-low flex flex-col gap-0.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-error text-[16px]">hourglass_empty</span>
+<span class="font-label-md text-label-md text-error font-semibold uppercase">Not Addressed</span>
+</div>
+<span class="font-label-code text-caption text-error font-semibold">Separate Work Order Req.</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Explicitly deferred: outside original crew scope, referred to Dept. of Sanitation.</span>
+</div>
+<!-- Unclear Resolution -->
+<div class="p-space-xs rounded-lg bg-surface-container-low flex flex-col gap-0.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-on-surface-variant text-[16px]">help_center</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold uppercase">Unclear Resolution</span>
+</div>
+<span class="font-label-code text-caption text-on-surface-variant">Inadequate Photo</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Post-repair photo obstructed or lacking spatial reference anchor.</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: The Benchmark Component (Dual-Issue Complaint Card) -->
+<section class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Benchmark Operational Card</h2>
+<span class="font-label-code text-caption text-secondary">LIVE CASE</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Card Attention Banner -->
+<div class="bg-primary-container text-on-primary px-space-md py-space-sm flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-secondary-fixed">assignment</span>
+<span class="font-label-code text-label-code font-bold tracking-wider">INCIDENT #GG-8492</span>
+</div>
+<span class="font-caption text-caption px-space-xs py-0.5 rounded bg-surface-container-highest/20 text-surface font-medium">Filed 2h ago</span>
+</div>
+<div class="p-space-md flex flex-col gap-space-sm">
+<!-- Citizen Case Metadata Header -->
+<div class="flex flex-col gap-space-2xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-snug">Bus Stop 14A Infrastructure &amp; Sanitation</h3>
+<div class="flex items-center gap-space-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-secondary">person_check</span>
+<span class="font-body-sm text-body-sm">Submitted by Verified Resident • Ward 4 North</span>
+</div>
+</div>
+<!-- Raw Complaint Quote Box -->
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col gap-1">
+<span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider font-semibold">Original Citizen Submission</span>
+<p class="font-body-md text-body-md text-on-surface italic">
+              "Streetlight near the bus stop is broken and garbage has accumulated beside it."
+            </p>
+</div>
+<!-- AI Candidate Decomposition Notice Pill -->
+<div class="bg-surface-container-high px-space-sm py-space-xs rounded-lg flex items-center justify-between text-on-surface gap-space-xs">
+<div class="flex items-center gap-space-2xs min-w-0">
+<span class="material-symbols-outlined text-[16px] text-secondary flex-shrink-0">call_split</span>
+<span class="font-caption text-caption text-on-surface-variant truncate">Candidate split by System • Confirmed by Dispatch Officer J. Vance</span>
+</div>
+<span class="font-label-code text-caption text-secondary font-bold uppercase flex-shrink-0">2 SUB-ISSUES</span>
+</div>
+<!-- Multi-Issue Decomposition Nested Tree -->
+<div class="flex flex-col gap-space-xs mt-space-2xs">
+<!-- Issue #1 -->
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-2xs">
+<span class="w-5 h-5 rounded-full bg-primary text-on-primary font-label-code text-caption flex items-center justify-center font-bold">1</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Broken Luminaire / Electrical Hazard</span>
+</div>
+<div class="flex items-center gap-1 px-space-xs py-0.5 rounded bg-surface-container-highest text-on-surface font-label-code text-caption">
+<span class="material-symbols-outlined text-[14px]">check</span>
+<span>ADDRESSED</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-xs text-on-surface-variant pt-space-2xs">
+<div>
+<span class="font-caption text-caption block uppercase">Assigned Entity</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Dept. of Public Lighting</span>
+</div>
+<div>
+<span class="font-caption text-caption block uppercase">Status</span>
+<span class="font-body-sm text-body-sm text-secondary font-medium">Crew Dispatched</span>
+</div>
+</div>
+</div>
+<!-- Issue #2 -->
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-2xs">
+<span class="w-5 h-5 rounded-full bg-primary text-on-primary font-label-code text-caption flex items-center justify-center font-bold">2</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Illicit Waste Accumulation</span>
+</div>
+<div class="flex items-center gap-1 px-space-xs py-0.5 rounded bg-surface-container-high text-error font-label-code text-caption font-bold">
+<span class="material-symbols-outlined text-[14px]">pending_actions</span>
+<span>NOT ADDRESSED</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-xs text-on-surface-variant pt-space-2xs">
+<div>
+<span class="font-caption text-caption block uppercase">Assigned Entity</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Dept. of Sanitation</span>
+</div>
+<div>
+<span class="font-caption text-caption block uppercase">Status</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Pending Crew 4 Slot</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Card Action Bar -->
+<div class="pt-space-xs flex items-center justify-between">
+<span class="font-label-code text-caption text-on-surface-variant">Audit Chain: #LGD-993-01</span>
+<button class="px-space-sm py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center gap-1 active:bg-surface-container-highest" type="button">
+<span>Inspect History</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 6: Field Evidence Verification Card -->
+<section class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Field Evidence Verification</h2>
+<span class="font-label-code text-caption text-secondary">CHAIN OF CUSTODY</span>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-md">
+<!-- Dual Image Comparison -->
+<div class="grid grid-cols-2 gap-space-xs">
+<!-- Before Photo -->
+<div class="flex flex-col gap-space-2xs">
+<div class="relative w-full h-32 rounded-lg overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Municipal documentary photograph showing broken urban streetlight fixture with dangling wires and trash heaps on sidewalk pavement, clear overcast daytime lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7HjwZp8_a7tEVgajliIJhFa8hSgpVMmuBidQfKePCXUqHxBaFIGIbXI0wz8y7scyAXxBGbky-BtehmvBvRpGOwVq2l_5DRH_jmEMDkMWkgDOn4G0aXPjRz8oEJ6ckBcHediOxbgGQj_3jYM0rQRTvCpkvBddaFfXIb1l7JcSMVK0dkfmbdrUxyWsvSFALqOt0sj1JuKCzuILagAnkEJrefAZ6A1k2Hbsb5PxHFtuuLziWHmGwrP_T"/>
+<div class="absolute top-2 left-2 px-space-xs py-0.5 rounded bg-primary text-on-primary font-label-code text-caption font-semibold">
+                BEFORE
+              </div>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Citizen Intake • 11:40 UTC</span>
+</div>
+<!-- After Photo -->
+<div class="flex flex-col gap-space-2xs">
+<div class="relative w-full h-32 rounded-lg overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Municipal inspection documentary photograph showing newly repaired functional LED street lamp luminaire, cleanly swept sidewalk free of garbage debris, bright neutral afternoon illumination" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgZkMSDAn-ZheIrvpvqwnKDSs0vRA2pNdqyW4kUX9kUCo8vANjiJleuOkieIU7XNjUYjNFatQgyajaQwVAWSGAAyS3AL55xw3vbsevpOADmC_si0iPHWMOxB5TP6Rj1p2Qvx3cdiwYlaQfBIE37HVMQ7ewVvnVkvN0teKvZmzSGyQmfWqWCrySraP1fEUtLsptZ8o6VMKE36MgtHF3uzCw9I0zCpIVvA91uI0NbzC4-4EX663l6Gwx"/>
+<div class="absolute top-2 left-2 px-space-xs py-0.5 rounded bg-secondary text-on-secondary font-label-code text-caption font-semibold">
+                AFTER
+              </div>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Crew Photo • 14:15 UTC</span>
+</div>
+</div>
+<!-- Provenance Details Table -->
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-semibold">EXIF &amp; Geolocation Ledger</span>
+<span class="font-label-code text-caption text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+<span>VERIFIED</span>
+</span>
+</div>
+<div class="flex flex-col gap-1 text-on-surface-variant">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="font-caption uppercase text-caption">GPS Coordinate:</span>
+<span class="font-label-code text-label-code text-on-surface">37.7749° N, 122.4194° W</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="font-caption uppercase text-caption">Timestamp:</span>
+<span class="font-label-code text-label-code text-on-surface">2025-05-12 14:22 UTC</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="font-caption uppercase text-caption">Hash SHA-256:</span>
+<span class="font-label-code text-label-code text-on-surface truncate max-w-[170px]">e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</span>
+</div>
+</div>
+</div>
+<!-- Officer Sign-Off Box -->
+<div class="bg-surface-container-high/60 p-space-sm rounded-lg flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">how_to_reg</span>
+<div>
+<span class="font-label-md text-label-md text-on-surface font-semibold block">Officer Verification Sign-Off</span>
+<span class="font-caption text-caption text-on-surface-variant">Dispatch Inspector: Lt. Marcus Brody (ID #4991)</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-2xs">
+<div class="flex items-center gap-1 text-on-surface-variant font-label-code text-caption">
+<span class="material-symbols-outlined text-[14px] text-secondary">fingerprint</span>
+<span>DIGITALLY SIGNED</span>
+</div>
+<span class="font-label-code text-caption text-on-surface-variant">Ward 4 Field Office</span>
+</div>
+</div>
+<!-- Final Validation Button -->
+<button class="w-full bg-primary text-on-primary h-11 px-space-md rounded-lg flex items-center justify-center gap-space-xs font-label-lg text-label-lg active:opacity-95 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">gavel</span>
+<span>Endorse Resolution to Civic Ledger</span>
+</button>
+</div>
+</section>
+</div>
+</div></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.04)]" data-active-classes="text-primary font-semibold"><div class="grid grid-cols-4 items-center h-16 px-space-2xs"><a aria-current="page" class="flex flex-col items-center justify-center min-h-[48px] h-full transition-colors text-primary font-semibold" data-path="complaints" href="#"><span class="material-symbols-outlined text-[22px]">assignment_late</span><span class="font-label-md text-label-md mt-0.5 tracking-tight">Complaints</span></a><a class="flex flex-col items-center justify-center min-h-[48px] h-full text-on-surface-variant hover:text-on-surface transition-colors" data-path="issue-audit" href="#"><span class="material-symbols-outlined text-[22px]">policy</span><span class="font-label-md text-label-md mt-0.5 tracking-tight">Issue Audit</span></a><a class="flex flex-col items-center justify-center min-h-[48px] h-full text-on-surface-variant hover:text-on-surface transition-colors" data-path="field-tasks" href="#"><span class="material-symbols-outlined text-[22px]">engineering</span><span class="font-label-md text-label-md mt-0.5 tracking-tight">Field Tasks</span></a><a class="flex flex-col items-center justify-center min-h-[48px] h-full text-on-surface-variant hover:text-on-surface transition-colors" data-path="civic-ledger" href="#"><span class="material-symbols-outlined text-[22px]">verified</span><span class="font-label-md text-label-md mt-0.5 tracking-tight">Civic Ledger</span></a></div></nav></body></html>

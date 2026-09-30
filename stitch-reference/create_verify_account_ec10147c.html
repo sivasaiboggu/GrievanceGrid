@@ -1,0 +1,274 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_stack" name="shell-type"><title>GrievanceGrid Portal</title><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-tint": "#515f7a", "on-secondary-fixed": "#001453", "on-primary-fixed-variant": "#394761", "secondary": "#3755c3", "inverse-surface": "#213145", "on-error-container": "#93000a", "surface-container": "#e5eeff", "on-tertiary-container": "#4c7eff", "surface-container-high": "#dce9ff", "tertiary-fixed": "#dbe1ff", "secondary-fixed": "#dde1ff", "on-primary-fixed": "#0c1b33", "inverse-on-surface": "#eaf1ff", "secondary-container": "#708cfd", "on-background": "#0b1c30", "on-tertiary": "#ffffff", "outline": "#75777e", "primary-fixed": "#d7e3ff", "on-tertiary-fixed-variant": "#003ea8", "on-surface-variant": "#44474d", "surface-container-highest": "#d3e4fe", "on-primary-container": "#7886a3", "surface-variant": "#d3e4fe", "on-surface": "#0b1c30", "on-error": "#ffffff", "surface-container-lowest": "#ffffff", "inverse-primary": "#b8c7e6", "surface": "#f8f9ff", "surface-bright": "#f8f9ff", "on-secondary-fixed-variant": "#173bab", "outline-variant": "#c5c6ce", "surface-dim": "#cbdbf5", "secondary-fixed-dim": "#b8c4ff", "primary-container": "#0f1e36", "surface-container-low": "#eff4ff", "tertiary-container": "#001950", "primary": "#000412", "error": "#ba1a1a", "on-secondary": "#ffffff", "tertiary-fixed-dim": "#b4c5ff", "tertiary": "#000315", "primary-fixed-dim": "#b8c7e6", "on-secondary-container": "#00217a", "background": "#f8f9ff", "error-container": "#ffdad6", "on-tertiary-fixed": "#00174b", "on-primary": "#ffffff" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "space-lg": "1.5rem", "space-xs": "0.5rem", "margin": "1rem", "space-2xs": "0.25rem", "margin-desktop": "2rem", "gutter": "1rem", "space-md": "1rem", "gutter-desktop": "1.5rem", "space-xl": "2rem", "margin-tablet": "1.5rem", "space-sm": "0.75rem", "space-2xl": "3rem" }, fontFamily: { "body-md": ["Inter"], "headline-sm": ["Inter"], "display-lg-mobile": ["Inter"], "body-sm": ["Inter"], "label-code": ["JetBrains Mono"], "label-md": ["Inter"], "headline-md": ["Inter"], "body-lg": ["Inter"], "display-lg": ["Inter"], "label-lg": ["Inter"], "headline-lg": ["Inter"], "caption": ["Inter"] }, fontSize: { "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "display-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "label-code": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "500" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "caption": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "500" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-xs"><button class="min-w-[44px] min-h-[44px] flex items-center justify-center text-on-surface -ml-space-xs" onclick="history.back()" type="button" aria-label="Go back"><span class="material-symbols-outlined text-[20px]">arrow_back</span></button><img alt="GrievanceGrid Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WSl9VE4Twaa6smTAaRMRSOp-5jQyeO_pTlDOc5MmPHJUNO5xw2sAPP5DE2JITOBu7AC_bjMmyDI1IiFdzTdEOvN1ZsR6AzTiEAp9JyGQ9_AQhpTc6RjMFP5ZnltF-1DSidhDRhS9VSZxs61poa6svhn5rem0iYegW1Pgb4Of0b0oHWMjRfVMSZHUiJZtHm00nxEKGTk3WP-AnkQjdBNKcQ3cRiEISkJGCsdF4CrJjuUcXRFunR83qOvw"></div><div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 bg-surface pb-safe"><div class="flex flex-col w-full px-gutter pb-space-2xl pt-space-md max-w-lg mx-auto">
+<!-- Delightful Civic Welcoming Pill -->
+
+<!-- Main Headline Block -->
+<div class="mb-space-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Create your account</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-2xs">Report civic issues, track progress, and stay informed about resolution updates.</p>
+</div>
+<!-- Interactive Civic Step Indicator -->
+<div class="bg-surface-container-low p-space-xs rounded-xl flex items-center justify-between gap-space-xs mb-space-lg shadow-sm">
+<button class="flex-1 py-space-xs px-space-sm rounded-lg flex items-center justify-center gap-space-xs bg-surface-container-lowest text-on-surface shadow-sm transition-all duration-200" id="step-btn-1" onclick="switchStep(1)">
+<span class="w-5 h-5 rounded-full bg-primary text-on-primary font-label-code text-caption flex items-center justify-center">1</span>
+<span class="font-label-lg text-label-lg font-semibold truncate">Details</span>
+</button>
+<div class="w-4 h-0.5 bg-surface-variant rounded-full shrink-0"></div>
+<button class="flex-1 py-space-xs px-space-sm rounded-lg flex items-center justify-center gap-space-xs bg-transparent text-on-surface-variant transition-all duration-200" id="step-btn-2" onclick="switchStep(2)">
+<span class="w-5 h-5 rounded-full bg-surface-variant text-on-surface-variant font-label-code text-caption flex items-center justify-center" id="step-badge-2">2</span>
+<span class="font-label-lg text-label-lg font-semibold truncate">Verification</span>
+</button>
+</div>
+<!-- STEP 1: Registration Form Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-md transition-all duration-300" id="step-1-card">
+<form class="flex flex-col gap-space-md" onsubmit="event.preventDefault(); goToVerification();">
+<!-- Full Name -->
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-lg text-label-lg text-on-surface font-semibold flex items-center gap-space-2xs" for="fullName">
+<span class="">Full Name</span>
+<span class="text-secondary font-body-sm">*</span>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-space-sm text-on-surface-variant text-[20px]">person</span>
+<input class="w-full h-12 pl-11 pr-space-md bg-surface-container-low text-on-surface rounded-lg font-body-md text-body-md placeholder:text-outline outline-none focus:bg-surface-container-lowest transition-all" id="fullName" placeholder="e.g. Sarah Jenkins" required="" type="text">
+</div>
+</div>
+<!-- Email / Phone -->
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-lg text-label-lg text-on-surface font-semibold flex items-center justify-between" for="contactField">
+<span class="">Email or mobile number</span>
+<span class="font-caption text-caption text-secondary">For status alerts</span>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-space-sm text-on-surface-variant text-[20px]">mail</span>
+<input class="w-full h-12 pl-11 pr-space-md bg-surface-container-low text-on-surface rounded-lg font-body-md text-body-md placeholder:text-outline outline-none focus:bg-surface-container-lowest transition-all" id="contactField" placeholder="e.g. sarah.j@example.com" required="" type="text" value="sarah.j@example.com">
+</div>
+</div>
+<!-- Password Field with inline interactive tracker -->
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-lg text-label-lg text-on-surface font-semibold" for="passwordField">
+          Create password
+        </label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-space-sm text-on-surface-variant text-[20px]">lock</span>
+<input class="w-full h-12 pl-11 pr-11 bg-surface-container-low text-on-surface rounded-lg font-body-md text-body-md placeholder:text-outline outline-none focus:bg-surface-container-lowest transition-all" id="passwordField" oninput="handlePasswordStrength(this.value)" placeholder="••••••••••••" required="" type="password">
+<button class="absolute right-space-sm text-on-surface-variant p-space-2xs" onclick="togglePassVisibility('passwordField', this)" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+<!-- Calm Friendly Requirement Pill Tray -->
+<div class="flex flex-wrap items-center gap-space-xs mt-space-2xs pt-space-2xs">
+<div class="flex items-center gap-1 bg-surface-container-low px-space-xs py-1 rounded-full text-on-surface-variant transition-colors" id="rule-length">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span class="font-caption text-caption">8+ characters</span>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-low px-space-xs py-1 rounded-full text-on-surface-variant transition-colors" id="rule-number">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span class="font-caption text-caption">Letters &amp; numbers</span>
+</div>
+</div>
+</div>
+<!-- Confirm Password -->
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-lg text-label-lg text-on-surface font-semibold" for="confirmPasswordField">
+          Confirm password
+        </label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-space-sm text-on-surface-variant text-[20px]">lock_clock</span>
+<input class="w-full h-12 pl-11 pr-11 bg-surface-container-low text-on-surface rounded-lg font-body-md text-body-md placeholder:text-outline outline-none focus:bg-surface-container-lowest transition-all" id="confirmPasswordField" placeholder="••••••••••••" required="" type="password">
+<button class="absolute right-space-sm text-on-surface-variant p-space-2xs" onclick="togglePassVisibility('confirmPasswordField', this)" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</div>
+<!-- Civic Terms Checkbox -->
+<label class="flex items-start gap-space-sm pt-space-xs cursor-pointer select-none">
+<input class="mt-1 w-5 h-5 rounded accent-primary cursor-pointer shrink-0" id="termsCheck" required="" type="checkbox">
+<span class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          I agree to the <span class="text-secondary font-semibold">Civic Service Terms</span> &amp; <span class="text-secondary font-semibold">Privacy Policy</span> for verified neighborhood reporting.
+        </span>
+</label>
+<!-- Primary Submit CTA -->
+<button class="w-full h-12 mt-space-sm bg-primary-container text-on-primary rounded-lg font-label-lg text-label-lg font-semibold flex items-center justify-center gap-space-xs shadow-md active:scale-[0.99] transition-transform" type="submit">
+<span class="">Create Account</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<!-- Secondary Sign In -->
+<div class="text-center pt-space-2xs">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Already have an account? 
+          <a class="font-label-lg text-label-lg text-secondary font-semibold ml-space-2xs" href="#">Sign In</a>
+</p>
+</div>
+</form>
+</div>
+<!-- STEP 2: VERIFICATION SCREEN (Inline Smooth Transition & Interactive) -->
+<div class="hidden bg-surface-container-lowest rounded-xl p-space-lg shadow-md transition-all duration-300" id="step-2-card">
+<div class="flex items-center gap-space-sm mb-space-md">
+<div class="w-12 h-12 rounded-full bg-secondary-container/20 flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[26px]">mark_email_read</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Verify your account</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+          Enter the 6-digit code sent to <span class="font-semibold text-on-surface" id="display-contact">s***@example.com</span>
+</p>
+</div>
+</div>
+<!-- 6 Large Digit Verification Boxes -->
+<div class="my-space-md">
+<label class="font-label-md text-label-md text-on-surface-variant block mb-space-xs font-medium">Authentication Code</label>
+<div class="grid grid-cols-6 gap-2 w-full">
+<input class="otp-box w-full h-14 bg-surface-container-low text-center font-label-code text-headline-md font-bold text-on-surface rounded-lg outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-secondary transition-all shadow-sm" maxlength="1" type="text" value="4">
+<input class="otp-box w-full h-14 bg-surface-container-low text-center font-label-code text-headline-md font-bold text-on-surface rounded-lg outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-secondary transition-all shadow-sm" maxlength="1" type="text" value="8">
+<input class="otp-box w-full h-14 bg-surface-container-low text-center font-label-code text-headline-md font-bold text-on-surface rounded-lg outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-secondary transition-all shadow-sm" maxlength="1" type="text" value="2">
+<input class="otp-box w-full h-14 bg-surface-container-low text-center font-label-code text-headline-md font-bold text-on-surface rounded-lg outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-secondary transition-all shadow-sm" maxlength="1" type="text" value="1">
+<input class="otp-box w-full h-14 bg-surface-container-low text-center font-label-code text-headline-md font-bold text-on-surface rounded-lg outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-secondary transition-all shadow-sm" maxlength="1" type="text" value="0">
+<input class="otp-box w-full h-14 bg-surface-container-low text-center font-label-code text-headline-md font-bold text-on-surface rounded-lg outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-secondary transition-all shadow-sm" maxlength="1" type="text" value="9">
+</div>
+</div>
+<!-- Quick Utilities: Resend & Change Contact -->
+<div class="flex items-center justify-between py-space-xs mb-space-md">
+<button class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1 disabled:opacity-60" disabled="" id="resend-btn" type="button">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span id="countdown-text" class="">Resend code (0:45)</span>
+</button>
+<button class="font-label-md text-label-md text-secondary font-semibold hover:underline flex items-center gap-1" onclick="switchStep(1)" type="button">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+<span class="">Change contact</span>
+</button>
+</div>
+<!-- Verification Button CTA -->
+<button class="w-full h-12 bg-primary-container text-on-primary rounded-lg font-label-lg text-label-lg font-semibold flex items-center justify-center gap-space-xs shadow-md active:scale-[0.99] transition-transform" onclick="completeVerification()" type="button">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="">Verify &amp; Continue</span>
+</button>
+</div>
+<!-- Trust & Neighborhood Community Card -->
+<div class="mt-space-lg bg-surface-container-low rounded-xl p-space-md flex items-center gap-space-md shadow-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[20px]">shield</span>
+</div>
+<div class="min-w-0">
+<div class="font-label-lg text-label-lg font-semibold text-on-surface">Verified Community Records</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant truncate">Your data is only shared with assigned municipal caseworkers.</div>
+</div>
+</div>
+</div>
+<script>
+  function switchStep(step) {
+    const card1 = document.getElementById('step-1-card');
+    const card2 = document.getElementById('step-2-card');
+    const btn1 = document.getElementById('step-btn-1');
+    const btn2 = document.getElementById('step-btn-2');
+    const badge2 = document.getElementById('step-badge-2');
+
+    if (step === 1) {
+      card1.classList.remove('hidden');
+      card2.classList.add('hidden');
+      btn1.className = 'flex-1 py-space-xs px-space-sm rounded-lg flex items-center justify-center gap-space-xs bg-surface-container-lowest text-on-surface shadow-sm transition-all duration-200';
+      btn2.className = 'flex-1 py-space-xs px-space-sm rounded-lg flex items-center justify-center gap-space-xs bg-transparent text-on-surface-variant transition-all duration-200';
+      badge2.className = 'w-5 h-5 rounded-full bg-surface-variant text-on-surface-variant font-label-code text-caption flex items-center justify-center';
+    } else {
+      card1.classList.add('hidden');
+      card2.classList.remove('hidden');
+      btn2.className = 'flex-1 py-space-xs px-space-sm rounded-lg flex items-center justify-center gap-space-xs bg-surface-container-lowest text-on-surface shadow-sm transition-all duration-200';
+      btn1.className = 'flex-1 py-space-xs px-space-sm rounded-lg flex items-center justify-center gap-space-xs bg-transparent text-on-surface-variant transition-all duration-200';
+      badge2.className = 'w-5 h-5 rounded-full bg-primary text-on-primary font-label-code text-caption flex items-center justify-center';
+      
+      const contactVal = document.getElementById('contactField').value.trim();
+      if (contactVal) {
+        if (contactVal.includes('@')) {
+          const parts = contactVal.split('@');
+          const masked = parts[0].slice(0, 1) + '***@' + parts[1];
+          document.getElementById('display-contact').innerText = masked;
+        } else {
+          document.getElementById('display-contact').innerText = contactVal;
+        }
+      }
+      startTimer();
+    }
+  }
+
+  function goToVerification() {
+    switchStep(2);
+  }
+
+  function togglePassVisibility(id, btn) {
+    const el = document.getElementById(id);
+    const icon = btn.querySelector('.material-symbols-outlined');
+    if (el.type === 'password') {
+      el.type = 'text';
+      icon.innerText = 'visibility_off';
+    } else {
+      el.type = 'password';
+      icon.innerText = 'visibility';
+    }
+  }
+
+  function handlePasswordStrength(val) {
+    const ruleLen = document.getElementById('rule-length');
+    const ruleNum = document.getElementById('rule-number');
+
+    const hasLength = val.length >= 8;
+    const hasAlphaNum = /[A-Za-z]/.test(val) && /[0-9]/.test(val);
+
+    if (hasLength) {
+      ruleLen.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+      ruleLen.classList.add('bg-surface-container', 'text-secondary');
+    } else {
+      ruleLen.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+      ruleLen.classList.remove('bg-surface-container', 'text-secondary');
+    }
+
+    if (hasAlphaNum) {
+      ruleNum.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+      ruleNum.classList.add('bg-surface-container', 'text-secondary');
+    } else {
+      ruleNum.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+      ruleNum.classList.remove('bg-surface-container', 'text-secondary');
+    }
+  }
+
+  // Verification Box Keyboard Auto-Advancement
+  const otpInputs = document.querySelectorAll('.otp-box');
+  otpInputs.forEach((input, index) => {
+    input.addEventListener('keyup', (e) => {
+      if (e.key >= '0' && e.key <= '9') {
+        if (index < otpInputs.length - 1) {
+          otpInputs[index + 1].focus();
+        }
+      } else if (e.key === 'Backspace') {
+        if (index > 0 && !input.value) {
+          otpInputs[index - 1].focus();
+        }
+      }
+    });
+  });
+
+  let timerInterval = null;
+  function startTimer() {
+    if (timerInterval) clearInterval(timerInterval);
+    let timeLeft = 45;
+    const countdownEl = document.getElementById('countdown-text');
+    const resendBtn = document.getElementById('resend-btn');
+    resendBtn.disabled = true;
+
+    timerInterval = setInterval(() => {
+      timeLeft--;
+      if (timeLeft <= 0) {
+        clearInterval(timerInterval);
+        countdownEl.innerText = 'Resend code now';
+        resendBtn.disabled = false;
+      } else {
+        countdownEl.innerText = `Resend code (0:${timeLeft < 10 ? '0' : ''}${timeLeft})`;
+      }
+    }, 1000);
+  }
+
+  function completeVerification() {
+    alert('Account verified successfully! Welcome to GrievanceGrid.');
+  }
+</script></main>
+
+</body></html>

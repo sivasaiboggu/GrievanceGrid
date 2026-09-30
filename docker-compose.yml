@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+  # PostgreSQL with PostGIS & pgvector
+  db:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.db
+    image: grievancegrid-db:16-postgis-pgvector
+    container_name: grievancegrid-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: grievancegrid
+      POSTGRES_PASSWORD: grievancegrid_secure_password_2026
+      POSTGRES_DB: grievancegrid
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U grievancegrid -d grievancegrid"]
+      interval: 3s
+      timeout: 3s
+      retries: 10
+      start_period: 5s
+
+  # Redis for Background Task Broker
+  redis:
+    image: redis:7-alpine
+    container_name: grievancegrid-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+
+  # FastAPI Backend
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: grievancegrid-backend
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql://grievancegrid:grievancegrid_secure_password_2026@db:5432/grievancegrid
+      REDIS_URL: redis://redis:6379/0
+      SECRET_KEY: grievancegrid_secure_jwt_secret_token_2026
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    volumes:
+      - ./backend/uploads:/app/uploads
+
+volumes:
+  pgdata:

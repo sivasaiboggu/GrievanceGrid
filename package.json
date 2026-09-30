@@ -1,0 +1,24 @@
+{
+  "name": "grievancegrid",
+  "version": "1.0.0",
+  "description": "GrievanceGrid — Evidence-Aware Civic Grievance & Resolution Platform",
+  "scripts": {
+    "start": "python -m uvicorn app.main:app --app-dir backend --host 0.0.0.0 --port 8000",
+    "backend": "python -m uvicorn app.main:app --app-dir backend --reload --port 8000",
+    "client": "npm run dev --prefix client",
+    "mobile": "npm start --prefix mobile",
+    "build": "npm run build --prefix client",
+    "test": "python -m pytest backend/tests"
+  },
+  "keywords": [
+    "civic",
+    "grievance",
+    "fastapi",
+    "react-native",
+    "expo",
+    "vite",
+    "stitch"
+  ],
+  "author": "",
+  "license": "ISC"
+}
