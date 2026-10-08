@@ -343,7 +343,48 @@ export const LoginScreen: React.FC = () => {
                 )}
               </button>
 
-              <div className="pt-2 text-center border-t border-[var(--civic-border)] mt-4">
+              <div className="pt-3 border-t border-[var(--civic-border)] mt-3">
+                <span className="text-[11px] font-mono uppercase tracking-wider text-[var(--civic-text-muted)] block text-center mb-2 font-bold">
+                  Quick Access / Role Presets
+                </span>
+                <div className="grid grid-cols-3 gap-1.5">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setIdentifier('citizen@grievancegrid.gov.in');
+                      setPassword('Password123!');
+                    }}
+                    className="py-1.5 px-2 rounded-lg bg-[var(--civic-canvas)] hover:bg-[var(--civic-surface-dim)] border border-[var(--civic-border)] text-[11px] font-medium text-[var(--civic-primary)] flex flex-col items-center gap-0.5 transition-all text-center"
+                  >
+                    <span className="font-bold text-[var(--civic-primary)]">Citizen</span>
+                    <span className="text-[9px] text-[var(--civic-text-muted)] font-mono">Arjun S.</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setIdentifier('officer@grievancegrid.gov.in');
+                      setPassword('Password123!');
+                    }}
+                    className="py-1.5 px-2 rounded-lg bg-[var(--civic-canvas)] hover:bg-[var(--civic-surface-dim)] border border-[var(--civic-border)] text-[11px] font-medium text-[var(--civic-primary)] flex flex-col items-center gap-0.5 transition-all text-center"
+                  >
+                    <span className="font-bold text-[var(--civic-primary)]">Officer</span>
+                    <span className="text-[9px] text-[var(--civic-text-muted)] font-mono">Priya D.</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setIdentifier('authority@grievancegrid.gov.in');
+                      setPassword('Password123!');
+                    }}
+                    className="py-1.5 px-2 rounded-lg bg-[var(--civic-canvas)] hover:bg-[var(--civic-surface-dim)] border border-[var(--civic-border)] text-[11px] font-medium text-[var(--civic-primary)] flex flex-col items-center gap-0.5 transition-all text-center"
+                  >
+                    <span className="font-bold text-[var(--civic-primary)]">Authority</span>
+                    <span className="text-[9px] text-[var(--civic-text-muted)] font-mono">Comm. Ramanathan</span>
+                  </button>
+                </div>
+              </div>
+
+              <div className="pt-2 text-center border-t border-[var(--civic-border)] mt-3">
                 <p className="text-[13px] text-[var(--civic-text-muted)]">
                   New to GrievanceGrid?{' '}
                   <button

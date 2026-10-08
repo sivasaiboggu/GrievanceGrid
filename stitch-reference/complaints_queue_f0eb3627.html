@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#f8f9ff;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "inverse-on-surface": "#eaf1ff", "inverse-surface": "#213145", "outline": "#75777e", "on-primary-fixed-variant": "#394761", "secondary": "#3755c3", "surface-tint": "#515f7a", "primary-fixed-dim": "#b8c7e6", "on-error-container": "#93000a", "on-secondary-fixed": "#001453", "on-tertiary-container": "#4c7eff", "secondary-fixed": "#dde1ff", "on-tertiary-fixed": "#00174b", "tertiary-fixed": "#dbe1ff", "tertiary": "#000315", "on-background": "#0b1c30", "on-surface": "#0b1c30", "primary-fixed": "#d7e3ff", "on-primary-fixed": "#0c1b33", "on-surface-variant": "#44474d", "on-tertiary": "#ffffff", "surface-variant": "#d3e4fe", "primary-container": "#0f1e36", "secondary-fixed-dim": "#b8c4ff", "surface-container-high": "#dce9ff", "on-primary-container": "#7886a3", "inverse-primary": "#b8c7e6", "primary": "#000412", "surface-dim": "#cbdbf5", "error": "#ba1a1a", "surface-container-lowest": "#ffffff", "on-secondary-container": "#00217a", "outline-variant": "#c5c6ce", "surface-container-highest": "#d3e4fe", "on-tertiary-fixed-variant": "#003ea8", "surface": "#f8f9ff", "on-primary": "#ffffff", "surface-container-low": "#eff4ff", "on-secondary-fixed-variant": "#173bab", "on-error": "#ffffff", "background": "#f8f9ff", "surface-container": "#e5eeff", "tertiary-fixed-dim": "#b4c5ff", "tertiary-container": "#001950", "on-secondary": "#ffffff", "error-container": "#ffdad6", "surface-bright": "#f8f9ff", "secondary-container": "#708cfd" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin-desktop": "2rem", "space-xl": "2rem", "space-2xs": "0.25rem", "space-md": "1rem", "margin-tablet": "1.5rem", "space-sm": "0.75rem", "margin": "1rem", "space-2xl": "3rem", "space-xs": "0.5rem", "space-lg": "1.5rem", "gutter": "1rem", "gutter-desktop": "1.5rem" }, "fontFamily": { "headline-md": ["Inter"], "body-lg": ["Inter"], "caption": ["Inter"], "headline-lg": ["Inter"], "display-lg": ["Inter"], "label-lg": ["Inter"], "display-lg-mobile": ["Inter"], "label-code": ["JetBrains Mono"], "body-md": ["Inter"], "label-md": ["Inter"], "headline-sm": ["Inter"], "body-sm": ["Inter"] }, "fontSize": { "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}], "caption": ["11px", {"lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "500"}], "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600"}], "display-lg": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "label-lg": ["14px", {"lineHeight": "20px", "fontWeight": "500"}], "display-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "label-code": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}], "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}], "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "500"}], "headline-sm": ["16px", {"lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600"}], "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs"><img alt="Brand logo. - Primary color: #0f1e36 - Font: inter - Mode: light - Roundness: rounded-sm" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UIl-F8S_zI4-vqZxO-UYLaErlJbZIjEuujL2Hg8s5zaqEDdjPKRAoU2qEuOFHxLBf0fNTPnmGFMBr0Pn5vplUzPaqBqqXLCu0hAjNNbUvdP9hb86KdFiO8PYCejPPN3qK-w71pTek1WZVsYstD-ZZjgEUEAzjSY_ko8Z1B9EwlbeL10amCYzwtsuAur4maoY2m8PFsrBAnA8UwmbXNvz7IwsEMG6Rl6rPw_50lMAvwafpYfGgOelwZ7w"/><div class="flex flex-col pl-space-2xs"><div class="flex items-center gap-space-2xs"><span class="font-headline-sm text-headline-sm text-on-surface">GrievanceGrid</span><span class="px-1.5 py-0.5 rounded-DEFAULT bg-primary-container text-on-primary font-caption text-caption uppercase tracking-wider">GRO</span></div><div class="flex items-center gap-1"><span class="font-caption text-caption text-on-surface-variant">Officer Brody • GRO-III</span><span class="font-caption text-caption text-outline">•</span><span class="font-caption text-caption text-secondary font-medium">Complaints</span></div></div></div><div class="flex items-center gap-space-2xs"><button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center rounded-lg text-on-surface-variant hover:text-on-surface active:bg-surface-container relative"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-error ring-2 ring-surface"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Interactive Triage Controller Script -->
+<script>
+    function switchQueueTab(element, filterType) {
+      document.querySelectorAll('.filter-chip').forEach(btn => {
+        btn.classList.remove('bg-primary-container', 'text-on-primary', 'shadow-sm');
+        btn.classList.add('bg-surface-container', 'text-on-surface-variant');
+      });
+      element.classList.remove('bg-surface-container', 'text-on-surface-variant');
+      element.classList.add('bg-primary-container', 'text-on-primary', 'shadow-sm');
+      
+      const countDisplay = document.getElementById('queue-count-summary');
+      if (filterType === 'unassigned') {
+        countDisplay.textContent = 'Showing 14 unassigned dockets';
+      } else if (filterType === 'urgent') {
+        countDisplay.textContent = 'Showing 6 critical SLA breaches (<2h)';
+      } else if (filterType === 'appeals') {
+        countDisplay.textContent = 'Showing 3 escalated citizen appeals';
+      } else {
+        countDisplay.textContent = 'Showing 52 active registered grievances';
+      }
+    }
+
+    function toggleQuickFilter(type) {
+      const banner = document.getElementById('filter-toast');
+      banner.classList.remove('hidden');
+      banner.querySelector('span.text-caption').textContent = 'Applied filter: ' + type;
+      setTimeout(() => banner.classList.add('hidden'), 2200);
+    }
+
+    function toggleEmptyStatePreview() {
+      const list = document.getElementById('dockets-container');
+      const empty = document.getElementById('empty-state-view');
+      const toggleBtn = document.getElementById('preview-toggle-text');
+      if (list.classList.contains('hidden')) {
+        list.classList.remove('hidden');
+        empty.classList.add('hidden');
+        toggleBtn.textContent = 'Preview Zero-Queue State';
+      } else {
+        list.classList.add('hidden');
+        empty.classList.remove('hidden');
+        toggleBtn.textContent = 'Restore Active Queue (52)';
+      }
+    }
+  </script>
+<!-- Sticky Operational Search Header -->
+<section class="px-margin pt-space-sm pb-space-xs bg-surface flex flex-col gap-space-xs">
+<div class="relative w-full flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[20px] pointer-events-none">search</span>
+<input aria-label="Search grievance dockets" class="w-full h-11 pl-10 pr-20 bg-surface-container-lowest text-on-surface placeholder:text-outline text-body-md font-body-md rounded-xl shadow-sm focus:outline-none focus:bg-surface-container-low transition-all" placeholder="Search Case ID, keyword, or ward..." type="search"/>
+<div class="absolute right-1.5 flex items-center gap-0.5">
+<button aria-label="Scan barcode or QR docket" class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-on-surface active:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[19px]">qr_code_scanner</span>
+</button>
+<button aria-label="Voice search query" class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-on-surface active:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[19px]">mic</span>
+</button>
+</div>
+</div>
+<!-- Quick Horizontal Filter Chips -->
+<div class="flex items-center gap-space-2xs overflow-x-auto pb-1 pt-0.5 -mx-margin px-margin scrollbar-none">
+<button class="filter-chip flex-shrink-0 px-3 py-1.5 rounded-full bg-primary-container text-on-primary font-caption text-caption shadow-sm flex items-center gap-1.5 transition-all" onclick="switchQueueTab(this, 'all')">
+<span class="material-symbols-outlined text-[15px]">inventory_2</span>
+<span>All Active (52)</span>
+</button>
+<button class="filter-chip flex-shrink-0 px-3 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-caption text-caption flex items-center gap-1.5 transition-all hover:text-on-surface" onclick="switchQueueTab(this, 'unassigned')">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+<span>Unassigned (14)</span>
+</button>
+<button class="filter-chip flex-shrink-0 px-3 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-caption text-caption flex items-center gap-1.5 transition-all hover:text-on-surface" onclick="switchQueueTab(this, 'urgent')">
+<span class="material-symbols-outlined text-[15px] text-error">timer</span>
+<span>SLA Urgent (<2h)</span>
+</button>
+<button class="filter-chip flex-shrink-0 px-3 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-caption text-caption flex items-center gap-1.5 transition-all hover:text-on-surface" onclick="switchQueueTab(this, 'signoff')">
+<span class="material-symbols-outlined text-[15px]">verified</span>
+<span>Awaiting Sign-off (7)</span>
+</button>
+<button class="filter-chip flex-shrink-0 px-3 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-caption text-caption flex items-center gap-1.5 transition-all hover:text-on-surface" onclick="switchQueueTab(this, 'appeals')">
+<span class="material-symbols-outlined text-[15px]">gavel</span>
+<span>Appeals (3)</span>
+</button>
+</div>
+</section>
+<!-- Filter & Sort Sub-bar -->
+<section class="px-margin py-2 bg-surface-container-low flex flex-col gap-1.5 shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[16px]">tune</span>
+<span class="font-caption text-caption text-on-surface-variant font-medium" id="queue-count-summary">Showing 14 unassigned dockets</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="px-2 py-1 rounded bg-surface-container text-on-surface font-caption text-caption flex items-center gap-1 active:bg-surface-container-high transition-colors" onclick="toggleQuickFilter('Ward 4 Priority')">
+<span>Ward: Zone 4</span>
+<span class="material-symbols-outlined text-[14px]">arrow_drop_down</span>
+</button>
+<button class="px-2 py-1 rounded bg-surface-container text-on-surface font-caption text-caption flex items-center gap-1 active:bg-surface-container-high transition-colors" onclick="toggleQuickFilter('Sorted by Urgency')">
+<span class="material-symbols-outlined text-[13px] text-error">swap_vert</span>
+<span>Urgency</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Toast Notification Pill for Filter Feedback -->
+<div class="hidden px-margin py-1.5" id="filter-toast">
+<div class="bg-inverse-surface text-inverse-on-surface px-3 py-1.5 rounded-lg flex items-center justify-between shadow-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary-fixed">info</span>
+<span class="font-caption text-caption">Applied filter parameter</span>
+</div>
+<span class="font-caption text-[10px] text-on-primary-container">Active</span>
+</div>
+</div>
+<!-- Primary Dockets Container -->
+<div class="px-margin py-space-sm flex flex-col gap-space-sm" id="dockets-container">
+<!-- Card 1: Critical SLA Multi-Issue Incident -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-3 relative overflow-hidden">
+<!-- High Severity Accent Strip -->
+<div class="absolute top-0 left-0 bottom-0 w-1.5 bg-error"></div>
+<!-- Header: ID & SLA Alert -->
+<div class="flex items-start justify-between gap-2 pl-1">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-code text-label-code text-primary font-bold tracking-tight">#GG-2026-004821</span>
+<span class="px-1.5 py-0.5 rounded bg-error-container text-on-error-container font-caption text-[10px] font-semibold uppercase flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[11px]">priority_high</span> SLA 1h 14m
+            </span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Intake: 08:42 AM via Citizen App</span>
+</div>
+<button aria-label="Docket options" class="w-8 h-8 rounded-lg flex items-center justify-center text-outline hover:text-on-surface active:bg-surface-container">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+<!-- Citizen Credentials Pill -->
+<div class="pl-1 flex items-center justify-between py-1 px-2.5 rounded-lg bg-surface-container-low text-on-surface">
+<div class="flex items-center gap-2 min-w-0">
+<div class="w-6 h-6 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-caption text-[11px] font-bold">SJ</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md truncate text-on-surface">Sarah Jenkins</span>
+<span class="font-caption text-[10px] text-on-surface-variant">Digital ID #9102 • Resident</span>
+</div>
+</div>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-caption text-[10px] uppercase font-medium flex items-center gap-1 flex-shrink-0">
+<span class="material-symbols-outlined text-[12px] text-secondary">verified_user</span> Verified
+        </span>
+</div>
+<!-- Multi-Issue Decomposition Box -->
+<div class="pl-1 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption text-on-surface-variant font-semibold uppercase tracking-wider">Decomposed Issues (2 Extracted)</span>
+<span class="font-caption text-[10px] text-secondary font-medium">Auto-Partitioned</span>
+</div>
+<!-- Issue Item 1 -->
+<div class="p-2.5 rounded-lg bg-surface-container flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="px-1.5 py-0.2 rounded bg-primary-container text-on-primary font-caption text-[10px] uppercase font-semibold">Primary • Transp.</span>
+<span class="font-caption text-[11px] text-error font-medium flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">warning</span> Critical
+            </span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface">Severe Asphalt Cave-in (4ft Span)</p>
+<span class="font-caption text-caption text-on-surface-variant">Dept: Roads, Transit & Bridge Maintenance</span>
+</div>
+<!-- Issue Item 2 -->
+<div class="p-2.5 rounded-lg bg-surface-container flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="px-1.5 py-0.2 rounded bg-surface-container-high text-on-surface-variant font-caption text-[10px] uppercase font-semibold">Secondary • Utility</span>
+<span class="font-caption text-[11px] text-secondary font-medium">Pending Wire Survey</span>
+</div>
+<p class="font-body-md text-body-md font-semibold text-on-surface">Exposed 240V Conduit Line</p>
+<span class="font-caption text-caption text-on-surface-variant">Dept: Public Lighting & Grid Infrastructure</span>
+</div>
+</div>
+<!-- Geo & Verification Anchor -->
+<div class="pl-1 flex items-center justify-between text-on-surface-variant pt-1">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="material-symbols-outlined text-secondary text-[16px] flex-shrink-0">location_on</span>
+<span class="font-body-sm text-body-sm truncate text-on-surface">Clover St & 14th Ave • <span class="font-medium text-secondary">Ward 4</span></span>
+</div>
+<span class="font-label-code text-caption text-outline flex-shrink-0">37.774°N, -122.419°W</span>
+</div>
+<!-- Action Button Group -->
+<div class="pl-1 pt-1 flex items-center gap-2">
+<button class="flex-1 h-11 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-semibold flex items-center justify-center gap-2 active:bg-on-primary-fixed-variant transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">rule</span>
+<span>Triage & Review Case</span>
+</button>
+<button aria-label="Route issue directly" class="w-11 h-11 rounded-lg bg-surface-container text-on-surface-variant flex items-center justify-center active:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[19px]">alt_route</span>
+</button>
+</div>
+</article>
+<!-- Card 2: Environmental Hazmat Single Issue -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-3 relative overflow-hidden">
+<!-- Amber Severity Accent Strip -->
+<div class="absolute top-0 left-0 bottom-0 w-1.5 bg-secondary-container"></div>
+<!-- Header: ID & SLA Alert -->
+<div class="flex items-start justify-between gap-2 pl-1">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-code text-label-code text-primary font-bold tracking-tight">#GG-2026-004818</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-caption text-[10px] font-semibold uppercase flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[11px] text-secondary">schedule</span> SLA 3h 40m
+            </span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Intake: 09:15 AM via Merchant Hotline</span>
+</div>
+<button aria-label="Docket options" class="w-8 h-8 rounded-lg flex items-center justify-center text-outline hover:text-on-surface active:bg-surface-container">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+<!-- Citizen Credentials Pill -->
+<div class="pl-1 flex items-center justify-between py-1 px-2.5 rounded-lg bg-surface-container-low text-on-surface">
+<div class="flex items-center gap-2 min-w-0">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center font-caption text-[11px] font-bold">MV</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md truncate text-on-surface">Marcus Vance</span>
+<span class="font-caption text-[10px] text-on-surface-variant">Ward 7 Licensed Business Operator</span>
+</div>
+</div>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface font-caption text-[10px] uppercase font-medium flex items-center gap-1 flex-shrink-0">
+<span class="material-symbols-outlined text-[12px] text-secondary">store</span> Merchant
+        </span>
+</div>
+<!-- Single Incident Body -->
+<div class="pl-1 flex flex-col gap-1.5">
+<div class="flex items-center gap-2">
+<span class="px-1.5 py-0.2 rounded bg-surface-container-high text-on-surface font-caption text-[10px] uppercase font-semibold">Sanitation & Hazmat</span>
+<span class="font-caption text-[11px] text-error font-medium flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">biotech</span> Chemical Risk
+          </span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface">Unsanctioned Chemical Drums & Odor</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Three unlabelled 55-gallon polymer barrels emitting solvent odor adjacent to drainage runoff inlet.</p>
+</div>
+<!-- Geo & Verification Anchor -->
+<div class="pl-1 flex items-center justify-between text-on-surface-variant pt-1">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="material-symbols-outlined text-secondary text-[16px] flex-shrink-0">location_on</span>
+<span class="font-body-sm text-body-sm truncate text-on-surface">Alleyway behind 342 Elm • <span class="font-medium text-secondary">Ward 7</span></span>
+</div>
+<span class="font-caption text-[11px] text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">2 Photos Attached</span>
+</div>
+<!-- Action Button Group -->
+<div class="pl-1 pt-1 flex items-center gap-2">
+<button class="flex-1 h-11 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md font-semibold flex items-center justify-center gap-2 active:bg-surface-container-high transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">photo_library</span>
+<span>Review Evidence (EXIF Match)</span>
+</button>
+<button class="h-11 px-3 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-semibold flex items-center justify-center gap-1 active:bg-on-primary-fixed-variant transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">assignment_turned_in</span>
+<span>Assign</span>
+</button>
+</div>
+</article>
+<!-- Card 3: Imminent SLA Transit Infrastructure Split -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-3 relative overflow-hidden">
+<!-- High Severity Accent Strip -->
+<div class="absolute top-0 left-0 bottom-0 w-1.5 bg-error"></div>
+<!-- Header: ID & SLA Alert -->
+<div class="flex items-start justify-between gap-2 pl-1">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-code text-label-code text-primary font-bold tracking-tight">#GG-2026-004790</span>
+<span class="px-1.5 py-0.5 rounded bg-error-container text-on-error-container font-caption text-[10px] font-semibold uppercase flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[11px]">bolt</span> SLA 42m Left
+            </span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Intake: 07:18 AM via Bus Transit Intercom</span>
+</div>
+<button aria-label="Docket options" class="w-8 h-8 rounded-lg flex items-center justify-center text-outline hover:text-on-surface active:bg-surface-container">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+<!-- Citizen Credentials Pill -->
+<div class="pl-1 flex items-center justify-between py-1 px-2.5 rounded-lg bg-surface-container-low text-on-surface">
+<div class="flex items-center gap-2 min-w-0">
+<div class="w-6 h-6 rounded-full bg-secondary-fixed-dim text-on-secondary flex items-center justify-center font-caption text-[11px] font-bold">ER</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md truncate text-on-surface">Elena Rostova</span>
+<span class="font-caption text-[10px] text-on-surface-variant">Transit Rider ID #0041 • Commuter</span>
+</div>
+</div>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-secondary font-caption text-[10px] uppercase font-medium flex items-center gap-1 flex-shrink-0">
+<span class="material-symbols-outlined text-[12px]">directions_bus</span> Commuter
+        </span>
+</div>
+<!-- Incident Body -->
+<div class="pl-1 flex flex-col gap-1.5">
+<div class="flex items-center gap-2">
+<span class="px-1.5 py-0.2 rounded bg-surface-container-high text-on-surface-variant font-caption text-[10px] uppercase font-semibold">Safety & Lighting</span>
+<span class="font-caption text-[11px] text-secondary font-medium">Multi-Issue Split Confirmed</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface">Shattered Streetlight Arm & Dark Corridor</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Luminophore fixture dangling above crosswalk pathway following severe delivery vehicle impact.</p>
+</div>
+<!-- Geo & Verification Anchor -->
+<div class="pl-1 flex items-center justify-between text-on-surface-variant pt-1">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="material-symbols-outlined text-secondary text-[16px] flex-shrink-0">location_on</span>
+<span class="font-body-sm text-body-sm truncate text-on-surface">Kearny & Sutter Blvd • <span class="font-medium text-secondary">Ward 2</span></span>
+</div>
+<span class="font-caption text-[11px] text-on-surface font-medium bg-secondary-fixed px-2 py-0.5 rounded text-on-secondary-fixed">CCTV Verified</span>
+</div>
+<!-- Action Button Group -->
+<div class="pl-1 pt-1 flex items-center gap-2">
+<button class="flex-1 h-11 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-semibold flex items-center justify-center gap-2 active:bg-on-primary-fixed-variant transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">send</span>
+<span>Assign Work Order (P1)</span>
+</button>
+<button aria-label="View corridor CCTV footage" class="w-11 h-11 rounded-lg bg-surface-container text-on-surface-variant flex items-center justify-center active:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[19px]">videocam</span>
+</button>
+</div>
+</article>
+<!-- Card 4: Sensor-Corroborated Anonymous Water Rupture -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-3 relative overflow-hidden">
+<!-- Standard Info Accent Strip -->
+<div class="absolute top-0 left-0 bottom-0 w-1.5 bg-secondary"></div>
+<!-- Header: ID & SLA Alert -->
+<div class="flex items-start justify-between gap-2 pl-1">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-code text-label-code text-primary font-bold tracking-tight">#GG-2026-004771</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-caption text-[10px] font-semibold uppercase flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[11px] text-secondary">water_drop</span> Telemetry Corroborated
+            </span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Intake: 06:50 AM via Web Anonymizer</span>
+</div>
+<button aria-label="Docket options" class="w-8 h-8 rounded-lg flex items-center justify-center text-outline hover:text-on-surface active:bg-surface-container">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+<!-- Citizen Credentials Pill -->
+<div class="pl-1 flex items-center justify-between py-1 px-2.5 rounded-lg bg-surface-container-low text-on-surface">
+<div class="flex items-center gap-2 min-w-0">
+<div class="w-6 h-6 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center font-caption text-[11px]">
+<span class="material-symbols-outlined text-[14px]">shield_person</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md truncate text-on-surface">Anonymous Web Portal</span>
+<span class="font-caption text-[10px] text-on-surface-variant">Origin: Encrypted HTTPS Proxy</span>
+</div>
+</div>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-caption text-[10px] uppercase font-medium flex items-center gap-1 flex-shrink-0">
+<span class="material-symbols-outlined text-[12px] text-secondary">sensors</span> IoT Match
+        </span>
+</div>
+<!-- Incident Body & Telemetry Data -->
+<div class="pl-1 flex flex-col gap-2">
+<div>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-high text-on-surface-variant font-caption text-[10px] uppercase font-semibold">Municipal Water & Utilities</span>
+<p class="font-headline-sm text-headline-sm text-on-surface pt-1">Sub-surface Main Rupture & Pressure Drop</p>
+</div>
+<!-- Telemetry Data Pill Strip -->
+<div class="p-2.5 rounded-lg bg-surface-container-high/40 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">speed</span>
+<div class="flex flex-col">
+<span class="font-caption text-[10px] uppercase text-on-surface-variant font-semibold">Telemetry Sensor SN-441</span>
+<span class="font-label-code text-[11px] font-bold text-error">-3.2 Bar Differential</span>
+</div>
+</div>
+<span class="font-caption text-[10px] text-secondary font-medium bg-surface-container-lowest px-2 py-0.5 rounded shadow-sm">Confirmed by SCADA</span>
+</div>
+</div>
+<!-- Geo & Verification Anchor -->
+<div class="pl-1 flex items-center justify-between text-on-surface-variant pt-1">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="material-symbols-outlined text-secondary text-[16px] flex-shrink-0">location_on</span>
+<span class="font-body-sm text-body-sm truncate text-on-surface">Market & 8th St Crossing • <span class="font-medium text-secondary">Ward 4</span></span>
+</div>
+<span class="font-label-code text-caption text-outline flex-shrink-0">Grid Vault #V-09</span>
+</div>
+<!-- Action Button Group -->
+<div class="pl-1 pt-1 flex items-center gap-2">
+<button class="flex-1 h-11 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md font-semibold flex items-center justify-center gap-2 active:bg-surface-container-high transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">link</span>
+<span>Review Incident Link</span>
+</button>
+<button class="h-11 px-3.5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-semibold flex items-center justify-center gap-1 active:bg-on-primary-fixed-variant transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">send_time_extension</span>
+<span>Dispatch Water Crew</span>
+</button>
+</div>
+</article>
+</div>
+<!-- Zero-Queue Delightful Empty State (Toggled dynamically or when all cases cleared) -->
+<div class="hidden px-margin py-space-xl flex flex-col items-center text-center" id="empty-state-view">
+<div class="w-20 h-20 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary mb-space-sm shadow-sm">
+<span class="material-symbols-outlined text-[40px]">task_alt</span>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-secondary font-caption text-caption uppercase font-semibold mb-2">Docket Cleared</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">All Ward Grievances Triaged</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs mb-space-md">No unassigned complaints in your jurisdiction. All SLA targets are currently met and field crews are mobilized.</p>
+<div class="p-space-sm bg-surface-container-low rounded-xl w-full max-w-sm flex items-center justify-around text-on-surface shadow-sm mb-space-md">
+<div class="flex flex-col items-center">
+<span class="font-headline-md text-headline-md text-primary">0</span>
+<span class="font-caption text-caption text-on-surface-variant">Pending</span>
+</div>
+<div class="h-8 w-px bg-outline-variant"></div>
+<div class="flex flex-col items-center">
+<span class="font-headline-md text-headline-md text-secondary">28</span>
+<span class="font-caption text-caption text-on-surface-variant">Resolved Today</span>
+</div>
+<div class="h-8 w-px bg-outline-variant"></div>
+<div class="flex flex-col items-center">
+<span class="font-headline-md text-headline-md text-on-surface">100%</span>
+<span class="font-caption text-caption text-on-surface-variant">SLA Compliance</span>
+</div>
+</div>
+<button class="h-10 px-4 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-2 active:bg-surface-container-high transition-colors" onclick="toggleEmptyStatePreview()">
+<span class="material-symbols-outlined text-[18px]">replay</span>
+<span>Reload Officer Queue</span>
+</button>
+</div>
+<!-- Operational Footer & Pagination -->
+<footer class="px-margin pt-space-xs pb-space-lg flex flex-col gap-3">
+<div class="flex items-center justify-between py-2 px-3 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2">
+<button aria-label="Previous docket page" class="w-8 h-8 rounded bg-surface-container text-outline flex items-center justify-center cursor-not-allowed opacity-50" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<span class="font-caption text-caption text-on-surface-variant font-medium">Page 1 of 4 • 52 Cases</span>
+<button aria-label="Next docket page" class="w-8 h-8 rounded bg-surface-container text-on-surface flex items-center justify-center active:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+<!-- Prototype Interactive Switcher -->
+<button class="text-secondary font-caption text-caption font-semibold flex items-center gap-1 active:underline" onclick="toggleEmptyStatePreview()">
+<span id="preview-toggle-text">Preview Zero-Queue State</span>
+<span class="material-symbols-outlined text-[15px]">sync_alt</span>
+</button>
+</div>
+<!-- Legal Integrity Verification Hash -->
+<div class="flex items-center justify-center gap-1.5 opacity-60">
+<span class="material-symbols-outlined text-[12px] text-outline">verified</span>
+<span class="font-label-code text-[10px] text-outline uppercase tracking-wider">BLOCK-LEDGER SYNCHRONIZED • #7F-9942</span>
+</div>
+</footer>
+</div></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-2px_12px_rgba(15,30,54,0.06)]" data-active-classes="text-primary-container font-semibold"><div class="flex justify-around items-center h-16 px-space-xs"><a class="flex flex-col items-center justify-center gap-0.5 flex-1 min-h-[48px] py-1 text-on-surface-variant transition-colors hover:text-on-surface" data-path="overview" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span><span class="font-caption text-caption tracking-tight">Overview</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-0.5 flex-1 min-h-[48px] py-1 transition-colors relative text-primary-container font-semibold" data-path="complaints" href="#"><div class="relative flex items-center justify-center"><span class="material-symbols-outlined text-[22px]">folder_open</span><span class="absolute -top-1 -right-3 px-1 py-0.2 rounded-full bg-primary-container text-on-primary font-caption text-[10px] leading-tight">14</span></div><span class="font-caption text-caption tracking-tight">Complaints</span></a><a class="flex flex-col items-center justify-center gap-0.5 flex-1 min-h-[48px] py-1 text-on-surface-variant transition-colors hover:text-on-surface relative" data-path="work-orders" href="#"><div class="relative flex items-center justify-center"><span class="material-symbols-outlined text-[22px]">assignment_turned_in</span><span class="absolute -top-1 -right-2.5 px-1 py-0.2 rounded-full bg-secondary text-on-secondary font-caption text-[10px] leading-tight">7</span></div><span class="font-caption text-caption tracking-tight">Work Orders</span></a><a class="flex flex-col items-center justify-center gap-0.5 flex-1 min-h-[48px] py-1 text-on-surface-variant transition-colors hover:text-on-surface" data-path="officer-profile" href="#"><span class="material-symbols-outlined text-[22px]">account_circle</span><span class="font-caption text-caption tracking-tight">Profile</span></a></div></nav></body></html>
+

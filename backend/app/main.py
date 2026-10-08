@@ -43,17 +43,19 @@ app.add_middleware(
 def redirect_to_docs():
     return RedirectResponse(url="/docs")
 
-# Include Routers under /api
-app.include_router(auth.router, prefix="/api")
-app.include_router(complaints.router, prefix="/api")
-app.include_router(evidence.router, prefix="/api")
-app.include_router(notifications.router, prefix="/api")
-app.include_router(audit.router, prefix="/api")
-app.include_router(reference.router, prefix="/api")
-app.include_router(work_orders.router, prefix="/api")
+# Include Routers under both /api and /api/v1 for standard institutional and versioned access
+for prefix in ("/api", "/api/v1"):
+    app.include_router(auth.router, prefix=prefix)
+    app.include_router(complaints.router, prefix=prefix)
+    app.include_router(evidence.router, prefix=prefix)
+    app.include_router(notifications.router, prefix=prefix)
+    app.include_router(audit.router, prefix=prefix)
+    app.include_router(reference.router, prefix=prefix)
+    app.include_router(work_orders.router, prefix=prefix)
 
 @app.get("/health")
 @app.get("/api/health")
+@app.get("/api/v1/health")
 def health_check():
     return {
         "status": "HEALTHY",

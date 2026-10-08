@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#f8f9ff;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "inverse-on-surface": "#eaf1ff", "inverse-surface": "#213145", "outline": "#75777e", "on-primary-fixed-variant": "#394761", "secondary": "#3755c3", "surface-tint": "#515f7a", "primary-fixed-dim": "#b8c7e6", "on-error-container": "#93000a", "on-secondary-fixed": "#001453", "on-tertiary-container": "#4c7eff", "secondary-fixed": "#dde1ff", "on-tertiary-fixed": "#00174b", "tertiary-fixed": "#dbe1ff", "tertiary": "#000315", "on-background": "#0b1c30", "on-surface": "#0b1c30", "primary-fixed": "#d7e3ff", "on-primary-fixed": "#0c1b33", "on-surface-variant": "#44474d", "on-tertiary": "#ffffff", "surface-variant": "#d3e4fe", "primary-container": "#0f1e36", "secondary-fixed-dim": "#b8c4ff", "surface-container-high": "#dce9ff", "on-primary-container": "#7886a3", "inverse-primary": "#b8c7e6", "primary": "#000412", "surface-dim": "#cbdbf5", "error": "#ba1a1a", "surface-container-lowest": "#ffffff", "on-secondary-container": "#00217a", "outline-variant": "c5c6ce", "surface-container-highest": "#d3e4fe", "on-tertiary-fixed-variant": "#003ea8", "surface": "#f8f9ff", "on-primary": "#ffffff", "surface-container-low": "#eff4ff", "on-secondary-fixed-variant": "#173bab", "on-error": "#ffffff", "background": "#f8f9ff", "surface-container": "#e5eeff", "tertiary-fixed-dim": "#b4c5ff", "tertiary-container": "#001950", "on-secondary": "#ffffff", "error-container": "#ffdad6", "surface-bright": "#f8f9ff", "secondary-container": "#708cfd" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin-desktop": "2rem", "space-xl": "2rem", "space-2xs": "0.25rem", "space-md": "1rem", "margin-tablet": "1.5rem", "space-sm": "0.75rem", "margin": "1rem", "space-2xl": "3rem", "space-xs": "0.5rem", "space-lg": "1.5rem", "gutter": "1rem", "gutter-desktop": "1.5rem" }, "fontFamily": { "headline-md": ["Inter"], "body-lg": ["Inter"], "caption": ["Inter"], "headline-lg": ["Inter"], "display-lg": ["Inter"], "label-lg": ["Inter"], "display-lg-mobile": ["Inter"], "label-code": ["JetBrains Mono"], "body-md": ["Inter"], "label-md": ["Inter"], "headline-sm": ["Inter"], "body-sm": ["Inter"] }, "fontSize": { "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}], "caption": ["11px", {"lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "500"}], "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600"}], "display-lg": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "label-lg": ["14px", {"lineHeight": "20px", "fontWeight": "500"}], "display-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "label-code": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}], "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}], "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "500"}], "headline-sm": ["16px", {"lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600"}], "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-margin flex items-center justify-between gap-space-xs"><div class="flex items-center gap-space-xs"><button aria-label="Go Back" class="w-11 h-11 -ml-1 flex items-center justify-center rounded-lg text-on-surface hover:bg-surface-container active:bg-surface-variant transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[20px]">arrow_back</span></button><img alt="Brand logo. - Primary color: #0f1e36 - Font: inter - Mode: light - Roundness: rounded-sm" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UIl-F8S_zI4-vqZxO-UYLaErlJbZIjEuujL2Hg8s5zaqEDdjPKRAoU2qEuOFHxLBf0fNTPnmGFMBr0Pn5vplUzPaqBqqXLCu0hAjNNbUvdP9hb86KdFiO8PYCejPPN3qK-w71pTek1WZVsYstD-ZZjgEUEAzjSY_ko8Z1B9EwlbeL10amCYzwtsuAur4maoY2m8PFsrBAnA8UwmbXNvz7IwsEMG6Rl6rPw_50lMAvwafpYfGgOelwZ7w"/><div class="flex flex-col"><span class="font-label-code text-label-code text-on-surface-variant uppercase tracking-wider">MUNICIPAL AUDIT VIEW</span><h1 class="font-headline-sm text-headline-sm text-on-surface truncate max-w-[170px]">Field Evidence Review</h1></div></div><div class="flex items-center gap-space-2xs"><button aria-label="Share Case Report" class="w-11 h-11 flex items-center justify-center rounded-lg text-on-surface-variant hover:text-on-surface active:bg-surface-container"><span class="material-symbols-outlined text-[20px]">share</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-safe bg-surface min-h-screen"><div class="flex flex-col w-full pb-10">
+<!-- Header Tracker Strip (No Top Margin to respect shell) -->
+<div class="bg-surface-container-high px-margin py-space-sm flex items-center justify-between text-on-surface">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-code text-label-code tracking-wide">CASE #GG-2026-004821</span>
+</div>
+<div class="flex items-center gap-space-2xs bg-surface-container px-space-xs py-0.5 rounded-full">
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">ITEM 1 OF 2</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">photo_library</span>
+</div>
+</div>
+<div class="px-margin flex flex-col gap-space-lg pt-space-md">
+<!-- 1. Evidence Media Viewer -->
+<div class="flex flex-col gap-space-xs">
+<div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-sm bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="A documentary style municipal photo of a city street intersection under natural daylight. A shattered aluminum street light pole luminaire lies partially across a concrete sidewalk curb, near stacked black commercial trash bags by a storm drain. Crisp documentary realism, cool municipal palette with subtle navy undertones, high-detail asphalt texture." id="evidence-photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyI4XbZ-NUc4Y7lO6KdIsdT6cPavbBBCtEbA4ZxWcDBaPAoxrKb5ayk2AXqO-3Av4SML1uG0jpwoKByXWgk4RAY5xq9yP7zqC9qOZgvB64LczghkTwhckcfol619IC8_x9TRMpP6SOSAKp0l4bTc_AQBQbexdMMJrQjfRQlmXIcI98Wdgokt1wVVemM8cp8V2wRvz8Ib-KfJ3FJ1jJWR6AaHl5KzPykUKKbdzN2nLgLj5K2Ooc6WjY"/>
+<!-- Top Status Overlays -->
+<div class="absolute top-space-xs inset-x-space-xs flex items-center justify-between gap-space-xs pointer-events-none">
+<span class="inline-flex items-center gap-space-2xs bg-primary-container/90 backdrop-blur-md px-space-xs py-1 rounded text-inverse-on-surface font-label-code text-label-code shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-secondary-fixed">lock</span>
+            SHA-256 VERIFIED
+          </span>
+<button class="pointer-events-auto w-8 h-8 rounded bg-primary-container/85 backdrop-blur-md flex items-center justify-center text-inverse-on-surface active:bg-primary-container shadow-sm" onclick="toggleZoom()" type="button">
+<span class="material-symbols-outlined text-[18px]" id="zoom-icon">zoom_in</span>
+</button>
+</div>
+<!-- Lower Metadata Chips Floating -->
+<div class="absolute bottom-space-xs inset-x-space-xs flex flex-wrap gap-space-2xs pointer-events-none">
+<div class="inline-flex items-center gap-space-2xs bg-surface-container-lowest/95 backdrop-blur-sm px-space-xs py-1 rounded shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-secondary">verified</span>
+<span class="font-label-code text-label-code text-on-surface">EXIF MATCH 99.4%</span>
+</div>
+<div class="inline-flex items-center gap-space-2xs bg-surface-container-lowest/95 backdrop-blur-sm px-space-xs py-1 rounded shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant">grain</span>
+<span class="font-label-code text-label-code text-on-surface">SENSOR: ORGANIC PRNU</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between px-space-2xs">
+<span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider">Original Ingestion Hash: 4b92-f01e-aa18-91c0</span>
+<button class="inline-flex items-center gap-1 font-label-md text-label-md text-secondary hover:text-on-secondary-fixed" onclick="copyHash(this)" type="button">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+<span>Copy Hex</span>
+</button>
+</div>
+</div>
+<!-- 2. Automated Diagnostics & Provenance Section -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm flex flex-col gap-space-md">
+<!-- Diagnostic Header Bar -->
+<div class="flex items-start justify-between gap-space-sm pb-space-sm border-b-0">
+<div class="flex flex-col">
+<span class="font-label-code text-label-code text-secondary uppercase font-semibold">Diagnostic Protocol v4.2</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Automated Sensor Integrity</h2>
+</div>
+<span class="inline-flex items-center gap-1 bg-surface-container px-space-xs py-1 rounded font-label-code text-label-code text-on-surface">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+          PASS / NOMINAL
+        </span>
+</div>
+<!-- Synthetic Risk Evaluation -->
+<div class="bg-surface-container-lowest p-space-sm rounded-lg flex flex-col gap-space-2xs shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-medium flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">analytics</span>
+            Synthetic Content Risk
+          </span>
+<span class="font-label-code text-label-code text-secondary font-semibold">0.02% (NEGLIGIBLE)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Camera sensor pattern noise (PRNU) is consistent with physical CMOS hardware capture. No statistical diffusion artifacts or generative model seams detected across high-frequency luminance channels.
+        </p>
+</div>
+<!-- Metadata Provenance Grid -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-code text-label-code text-on-surface-variant uppercase tracking-wider">Device & Lineage Vectors</span>
+<div class="grid grid-cols-1 gap-space-2xs font-body-sm text-body-sm">
+<div class="flex items-center justify-between py-1.5 px-space-xs bg-surface-container rounded">
+<span class="text-on-surface-variant flex items-center gap-1.5 font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">smartphone</span> Captured Hardware
+            </span>
+<span class="font-label-code text-label-code text-on-surface">Pixel 8 (AP2A.240505)</span>
+</div>
+<div class="flex items-center justify-between py-1.5 px-space-xs bg-surface-container rounded">
+<span class="text-on-surface-variant flex items-center gap-1.5 font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">schedule</span> Chronology
+            </span>
+<span class="font-label-code text-label-code text-on-surface">14 May 2026 • 10:41:08 EST</span>
+</div>
+<div class="flex items-center justify-between py-1.5 px-space-xs bg-surface-container rounded">
+<span class="text-on-surface-variant flex items-center gap-1.5 font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">my_location</span> GNSS Delta
+            </span>
+<span class="font-label-code text-label-code text-on-surface">47.6062° N, 122.3321° W (±1.8m)</span>
+</div>
+<div class="flex items-center justify-between py-1.5 px-space-xs bg-surface-container rounded">
+<span class="text-on-surface-variant flex items-center gap-1.5 font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">signpost</span> Reverse Geocode
+            </span>
+<span class="font-label-code text-label-code text-on-surface text-right truncate max-w-[190px]">Ward 04, Sector Stop 14A</span>
+</div>
+</div>
+</div>
+<!-- Civic Policy Guardrail Reminder -->
+<div class="bg-surface-container-high p-space-sm rounded-lg flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">policy</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Civic Policy Reminder</span>
+<p class="font-caption text-caption text-on-surface-variant mt-0.5 leading-relaxed">
+            Automated checks provide statistical signal only. Never treat model inference as definitive proof of authenticity or fraud. Officer manual review is legally required under Civic Code §42-B.
+          </p>
+</div>
+</div>
+</div>
+<!-- 3. Context & Reuse Indicators -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-on-surface">database</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Corpus Reference Audit</h3>
+</div>
+<span class="font-label-code text-label-code bg-surface-container px-space-xs py-0.5 rounded text-on-surface-variant">RDD2022 + TACO</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-normal">
+        No duplicate web-sourced imagery or prior municipal docket re-uploads identified across 1.4M indexed records. Ingested artifact demonstrates unique environmental geometry consistent with an authentic novel event.
+      </p>
+<div class="bg-surface-container-lowest p-space-sm rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-secondary">fiber_new</span>
+<span class="font-label-md text-label-md text-on-surface">Novel Capture Signature</span>
+</div>
+<span class="font-label-code text-label-code text-secondary font-medium">INDEX MATCH 0.00%</span>
+</div>
+</div>
+<!-- 4. Officer Adjudication Controls -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<div class="flex flex-col gap-space-2xs">
+<span class="font-label-code text-label-code text-on-surface-variant uppercase tracking-wider">Adjudication Determination</span>
+<p class="font-caption text-caption text-on-surface-variant">Select disposition to sign and append officer cryptographic receipt.</p>
+</div>
+<div class="flex flex-col gap-space-xs">
+<!-- Primary Action -->
+<button class="w-full h-12 bg-primary-container text-inverse-on-surface rounded-xl flex items-center justify-center gap-space-xs shadow-sm active:scale-[0.99] transition-transform" onclick="recordDecision('approved')" type="button">
+<span class="material-symbols-outlined text-[20px] text-secondary-fixed">assignment_turned_in</span>
+<span class="font-label-lg text-label-lg font-medium">Approve Evidence for Adjudication</span>
+</button>
+<!-- Secondary Action -->
+<button class="w-full h-12 bg-surface-container text-on-surface rounded-xl flex items-center justify-center gap-space-xs active:bg-surface-container-high transition-colors" onclick="recordDecision('inspection')" type="button">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">engineering</span>
+<span class="font-label-lg text-label-lg font-medium">Flag for Manual Field Inspection</span>
+</button>
+<!-- Auxiliary Action -->
+<button class="w-full py-2.5 text-secondary hover:text-on-secondary-fixed flex items-center justify-center gap-1 font-label-md text-label-md font-medium" onclick="recordDecision('citizen_request')" type="button">
+<span class="material-symbols-outlined text-[18px]">add_a_photo</span>
+          Request Additional Citizen Photos
+        </button>
+</div>
+</div>
+<!-- 5. Audit Trail & Provenance Receipt Card -->
+<div class="bg-surface-container-high rounded-xl p-space-md flex flex-col gap-space-xs text-on-surface shadow-sm">
+<div class="flex items-center justify-between pb-space-2xs">
+<span class="font-label-code text-label-code uppercase tracking-wider text-on-surface-variant">Ingestion Lineage</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">verified_user</span>
+</div>
+<div class="flex flex-col gap-1 font-label-code text-label-code text-on-surface">
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Cryptographic Hash:</span>
+<span class="select-all">4b92-f01e-aa18-91c0</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Audit Node:</span>
+<span>PW-DIST-04 (West Central)</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Attestation Epoch:</span>
+<span>1747233668.049</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Decision Banner (Hidden initially) -->
+<div class="hidden fixed bottom-space-md inset-x-margin z-40 bg-primary-container text-inverse-on-surface rounded-xl p-space-md shadow-xl flex items-center justify-between gap-space-sm" id="decision-banner">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[24px] text-secondary-fixed" id="banner-icon">check_circle</span>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-semibold" id="banner-title">Decision Logged</span>
+<span class="font-caption text-caption text-on-primary-container" id="banner-sub">Appended to immutable audit log</span>
+</div>
+</div>
+<button class="text-on-primary-container hover:text-inverse-on-surface p-1" onclick="dismissBanner()" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+</div>
+<script>
+  let isZoomed = false;
+
+  function toggleZoom() {
+    const photo = document.getElementById('evidence-photo');
+    const icon = document.getElementById('zoom-icon');
+    if (!isZoomed) {
+      photo.style.transform = 'scale(1.4)';
+      photo.style.transition = 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)';
+      icon.textContent = 'zoom_out';
+      isZoomed = true;
+    } else {
+      photo.style.transform = 'scale(1.0)';
+      icon.textContent = 'zoom_in';
+      isZoomed = false;
+    }
+  }
+
+  function copyHash(btn) {
+    navigator.clipboard.writeText('4b92-f01e-aa18-91c0');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '<span class="material-symbols-outlined text-[14px]">check</span><span>Copied</span>';
+    setTimeout(() => {
+      btn.innerHTML = originalText;
+    }, 1800);
+  }
+
+  function recordDecision(type) {
+    const banner = document.getElementById('decision-banner');
+    const title = document.getElementById('banner-title');
+    const sub = document.getElementById('banner-sub');
+    const icon = document.getElementById('banner-icon');
+
+    if (type === 'approved') {
+      title.textContent = 'Approved for Adjudication';
+      sub.textContent = 'Signature attached with officer ID 8410';
+      icon.textContent = 'task_alt';
+    } else if (type === 'inspection') {
+      title.textContent = 'Field Dispatch Requested';
+      sub.textContent = 'Route scheduled with Sector 14 Public Works';
+      icon.textContent = 'pending_actions';
+    } else {
+      title.textContent = 'Citizen Request Sent';
+      sub.textContent = 'SMS prompt generated for supplementary angle';
+      icon.textContent = 'send';
+    }
+
+    banner.classList.remove('hidden');
+    banner.classList.add('flex');
+
+    setTimeout(() => {
+      dismissBanner();
+    }, 4500);
+  }
+
+  function dismissBanner() {
+    const banner = document.getElementById('decision-banner');
+    banner.classList.add('hidden');
+    banner.classList.remove('flex');
+  }
+</script></main></body></html>
+

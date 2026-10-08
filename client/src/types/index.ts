@@ -1,4 +1,4 @@
-export type Role = 'CITIZEN' | 'MUNICIPAL_OFFICER' | 'FIELD_WORKER';
+export type Role = 'CITIZEN' | 'MUNICIPAL_OFFICER' | 'FIELD_WORKER' | 'SENIOR_AUTHORITY';
 
 export type ComplaintStatus = 
   | 'SUBMITTED' 

@@ -1,0 +1,289 @@
+# ==============================================================================
+# GrievanceGrid ML Pipeline Configuration
+# ==============================================================================
+# All model and training configuration lives here — not hardcoded in scripts.
+
+# ── Project Identity ──────────────────────────────────────────────────────────
+project:
+  name: grievancegrid_ml
+  version: "1.0.0"
+  research_question: >
+    How can AI assist in understanding, connecting, and evaluating civic
+    grievances by analysing individual issues, multimodal evidence, related
+    reports, and resolution responses?
+
+# ── Reproducibility ───────────────────────────────────────────────────────────
+reproducibility:
+  random_seed: 42
+  deterministic: true
+
+# ── Dataset Paths ─────────────────────────────────────────────────────────────
+datasets:
+  nyc311:
+    raw_path: datasets/raw/nyc311/
+    processed_path: datasets/processed/nyc311/
+    splits_path: datasets/splits/nyc311/
+    domain_note: "US city domain. NOT Indian municipal data."
+  rdd2022:
+    raw_path: datasets/raw/rdd2022/
+    processed_path: datasets/processed/rdd2022/
+    splits_path: datasets/splits/rdd2022/
+    domain_note: "Road damage images. Survey vehicles, not citizen smartphones."
+  taco:
+    raw_path: datasets/raw/taco/
+    processed_path: datasets/processed/taco/
+    splits_path: datasets/splits/taco/
+    domain_note: "Litter object detection. Individual objects, not large piles."
+  floodnet:
+    raw_path: datasets/raw/floodnet/
+    processed_path: datasets/processed/floodnet/
+    splits_path: datasets/splits/floodnet/
+    domain_note: "Aerial imagery only. NOT citizen smartphone photos."
+  urban_community_issues:
+    raw_path: datasets/raw/urban_community_issues/
+    processed_path: datasets/processed/urban_community_issues/
+    splits_path: datasets/splits/urban_community_issues/
+    domain_note: "Small imbalanced dataset. Manual validation required."
+  local:
+    raw_path: datasets/local/civic_images/
+    annotation_path: datasets/local/annotations/
+    domain_note: "Locally collected civic images. Primary evaluation data."
+  synthetic:
+    complaints_path: datasets/synthetic/complaints/
+    isolation_note: "MUST be isolated from real data. Never mixed into test sets."
+
+# ── Complaint Category Classification ─────────────────────────────────────────
+category_classification:
+  categories:
+    - "Road Damage"
+    - "Streetlight Issues"
+    - "Garbage & Waste"
+    - "Drainage & Sewage"
+    - "Water Supply"
+    - "Traffic & Road Obstructions"
+    - "Public Infrastructure Damage"
+    - "Sanitation & Public Cleanliness"
+    - "Electrical & Energy"
+    - "Parks & Recreation"
+
+  baseline:
+    model: "TF-IDF + One-vs-Rest Logistic Regression"
+    tfidf:
+      max_features: 20000
+      ngram_range: [1, 2]
+      sublinear_tf: true
+      min_df: 2
+      max_df: 0.95
+    logistic_regression:
+      C: 1.0
+      max_iter: 1000
+      random_state: 42
+      solver: "lbfgs"
+
+  advanced:
+    model: "IndicBERTv2"
+    model_name: "ai4bharat/IndicBERTv2-MLM-only"
+    max_length: 128
+    batch_size: 16
+    learning_rate: 2.0e-5
+    num_epochs: 5
+    warmup_steps: 100
+    weight_decay: 0.01
+
+  evaluation:
+    metrics:
+      - "precision"
+      - "recall"
+      - "f1"
+      - "macro_f1"
+      - "confusion_matrix"
+      - "per_class_performance"
+    test_split: 0.15
+    val_split: 0.10
+
+# ── Issue Extraction ───────────────────────────────────────────────────────────
+issue_extraction:
+  model: "IndicBERTv2 BIO Tagger"
+  model_name: "ai4bharat/IndicBERTv2-MLM-only"
+  task: "token_classification"
+  labels:
+    - "O"
+    - "B-ISSUE"
+    - "I-ISSUE"
+  max_length: 256
+  batch_size: 8
+  learning_rate: 3.0e-5
+  num_epochs: 10
+
+  evaluation:
+    metrics:
+      - "precision"
+      - "recall"
+      - "exact_span_f1"
+      - "missed_issues"
+      - "boundary_errors"
+      - "per_category_performance"
+
+  annotation:
+    schema_path: datasets/annotations/schema/bio_issue_schema.json
+    human_labels_path: datasets/annotations/issue_spans/
+    synthetic_labels_path: datasets/synthetic/complaints/
+
+# ── Semantic Embeddings ────────────────────────────────────────────────────────
+embeddings:
+  model: "paraphrase-multilingual-MiniLM-L12-v2"
+  model_name: "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+  embedding_dim: 384
+  batch_size: 32
+  normalize: true
+
+  storage:
+    backend: "pgvector"
+    table: "complaint_embeddings"
+    index_type: "ivfflat"
+    index_lists: 100
+
+  retrieval:
+    top_k: 10
+    similarity_threshold: 0.7
+    filters:
+      geographic_radius_km: 5.0
+      time_window_days: 90
+      same_category: false
+
+# ── Incident Linking ───────────────────────────────────────────────────────────
+incident_linking:
+  model: "Logistic Regression Incident Scorer"
+  features:
+    - "semantic_similarity"
+    - "category_match"
+    - "spatial_distance_km"
+    - "temporal_distance_days"
+    - "normalized_issue_similarity"
+    - "location_string_similarity"
+
+  logistic_regression:
+    C: 1.0
+    random_state: 42
+    solver: "lbfgs"
+
+  thresholds:
+    candidate_score: 0.5
+    high_confidence: 0.85
+
+  evaluation:
+    metrics:
+      - "precision"
+      - "recall"
+      - "false_link_rate"
+      - "human_confirmation_agreement"
+
+  policy:
+    human_confirmation_required: true
+    auto_merge_forbidden: true
+    auto_separate_forbidden: false
+
+# ── Image Classification ───────────────────────────────────────────────────────
+image_classification:
+  model: "EfficientNet-B0"
+  pretrained: "ImageNet"
+  image_size: [224, 224]
+  batch_size: 32
+  learning_rate: 1.0e-4
+  num_epochs: 20
+  weight_decay: 1.0e-4
+
+  categories:
+    - label: "pothole"
+      datasets: ["rdd2022", "urban_community_issues"]
+    - label: "road_crack"
+      datasets: ["rdd2022", "urban_community_issues"]
+    - label: "debris_litter"
+      datasets: ["taco", "urban_community_issues"]
+    - label: "waterlogging_flood"
+      datasets: ["floodnet", "uw_bench"]
+    - label: "drain_blockage"
+      datasets: ["culvert_blockage", "urban_community_issues"]
+    - label: "infrastructure_damage"
+      datasets: ["urban_community_issues", "open_images"]
+    - label: "normal_road"
+      datasets: ["rdd2022", "mapillary"]
+    - label: "unrelated"
+      datasets: ["open_images", "mapillary"]
+
+  augmentation:
+    horizontal_flip: true
+    vertical_flip: false
+    rotation_degrees: 15
+    color_jitter: 0.2
+    random_crop: true
+
+  evaluation:
+    metrics:
+      - "precision"
+      - "recall"
+      - "f1"
+      - "macro_f1"
+      - "confusion_matrix"
+      - "per_class_performance"
+
+  limitations:
+    - "External datasets come from different domains (survey vehicles, aerial, etc.)"
+    - "Cannot claim strong citizen-photo performance without local evaluation"
+    - "Model does not perform forensic image authenticity detection"
+    - "EfficientNet-B0 is a semantic classifier, NOT a manipulation detector"
+
+# ── Response Coverage Classification ──────────────────────────────────────────
+response_coverage:
+  model: "IndicBERTv2 Pair Classifier"
+  model_name: "ai4bharat/IndicBERTv2-MLM-only"
+  task: "sequence_classification"
+
+  labels:
+    - "ADDRESSED"
+    - "PARTIAL"
+    - "NOT_ADDRESSED"
+    - "UNCLEAR"
+
+  input:
+    issue_text: "Original issue description"
+    response_text: "Field worker response / work evidence description"
+
+  max_length: 256
+  batch_size: 8
+  learning_rate: 2.0e-5
+  num_epochs: 10
+
+  annotation:
+    schema_path: datasets/annotations/schema/response_coverage_schema.json
+    human_labels_path: datasets/annotations/response_coverage/
+
+  evaluation:
+    metrics:
+      - "per_class_precision"
+      - "per_class_recall"
+      - "per_class_f1"
+      - "macro_f1"
+      - "wrong_addressed_rate"
+      - "confusion_matrix"
+      - "human_agreement_kappa"
+
+  policy:
+    officer_override_allowed: true
+    missing_evidence_does_not_auto_classify: true
+    overdue_is_not_a_coverage_class: true
+
+# ── Recurrence Analysis ────────────────────────────────────────────────────────
+recurrence_analysis:
+  signals:
+    - "nearby_location_km: 0.5"
+    - "similar_issue_semantic"
+    - "temporal_recurrence_days: 30"
+    - "same_incident"
+    - "reopened_or_appealed"
+    - "new_incident_after_resolution"
+
+  policy:
+    citizen_not_automatically_penalized: true
+    recurrence_for_operational_insight_only: true
+    human_review_required: true

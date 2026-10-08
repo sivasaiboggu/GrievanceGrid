@@ -145,36 +145,42 @@ export const AccessStates: React.FC<AccessStateProps> = ({
               <span className="text-[11px] font-mono uppercase text-[var(--civic-text-muted)] tracking-wider">Portal Mismatch</span>
             </div>
             <h2 className="text-[20px] font-semibold text-[var(--civic-primary)] mb-2 leading-snug">
-              You’re in the wrong portal
+              {currentUserRole.toLowerCase().includes('worker') 
+                ? 'Mobile Application Required'
+                : 'Portal Mismatch'}
             </h2>
-            <p className="text-[14px] text-[var(--civic-text-muted)] mb-5 max-w-xs">
-              This account is signed in as a Citizen. The requested area is available to authorized municipal staff.
+            <p className="text-[14px] text-[var(--civic-text-muted)] mb-5 max-w-sm">
+              {currentUserRole.toLowerCase().includes('worker')
+                ? 'Field worker tasks, on-ground work order execution, and before/after evidentiary captures are operated exclusively through the GrievanceGrid Mobile Application.'
+                : `This account is signed in as ${currentUserRole}. The requested administrative area requires a different authorization level.`}
             </p>
 
             <div className="w-full bg-[var(--civic-canvas)] rounded-lg p-3 text-left mb-6 flex flex-col gap-1 border border-[var(--civic-border)]">
               <span className="text-[13px] text-[var(--civic-primary)] font-medium">
-                Current: <span className="font-semibold">{currentUserName} (Resident Profile)</span>
+                Current Account: <span className="font-semibold">{currentUserName} ({currentUserRole})</span>
               </span>
               <span className="text-[12px] text-[var(--civic-secondary)] font-mono">
-                Requested: Staff Operations Desk
+                Platform: {requestedRoute}
               </span>
             </div>
 
             <div className="w-full flex flex-col gap-2">
               <button 
-                onClick={onNavigateHome}
+                onClick={onNavigateSignIn}
                 className="w-full h-11 rounded-lg bg-[var(--civic-container)] text-white text-[14px] font-semibold flex items-center justify-center gap-2 shadow-sm hover:opacity-95"
               >
-                <span className="material-symbols-outlined text-[18px]">dashboard</span>
-                <span>Go to Citizen Home</span>
-              </button>
-              <button 
-                onClick={onNavigateSignIn}
-                className="w-full h-11 rounded-lg bg-[var(--civic-canvas)] text-[var(--civic-primary)] text-[14px] font-medium flex items-center justify-center gap-2 hover:bg-[var(--civic-surface-dim)]"
-              >
                 <span className="material-symbols-outlined text-[18px]">logout</span>
-                <span>Sign Out & Change Account</span>
+                <span>Sign Out & Switch Account</span>
               </button>
+              {!currentUserRole.toLowerCase().includes('worker') && onNavigateHome && (
+                <button 
+                  onClick={onNavigateHome}
+                  className="w-full h-11 rounded-lg bg-[var(--civic-canvas)] text-[var(--civic-primary)] text-[14px] font-medium flex items-center justify-center gap-2 hover:bg-[var(--civic-surface-dim)]"
+                >
+                  <span className="material-symbols-outlined text-[18px]">dashboard</span>
+                  <span>Return to Home</span>
+                </button>
+              )}
             </div>
           </div>
         )}

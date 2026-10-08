@@ -86,6 +86,27 @@ export const api = {
   reviewAppeal: (appealId: string, data: { status: 'REOPENED' | 'REJECTED'; officer_notes?: string }) =>
     apiRequest(`/appeals/${appealId}/review`, { method: 'PUT', body: JSON.stringify(data) }),
 
+  // Officer-specific endpoints
+  getOfficerOverview: () => apiRequest('/complaints/officer/overview'),
+
+  confirmIssue: (complaintId: string, issueId: string, data: { category?: string; department_id?: string; notes?: string }) =>
+    apiRequest(`/complaints/${complaintId}/issues/${issueId}/confirm`, { method: 'PUT', body: JSON.stringify(data) }),
+
+  getRelatedCandidates: (complaintId: string) =>
+    apiRequest(`/complaints/${complaintId}/related-candidates`),
+
+  confirmIncident: (complaintId: string, data: { related_complaint_id: string; incident_title?: string }) =>
+    apiRequest(`/complaints/${complaintId}/confirm-incident`, { method: 'POST', body: JSON.stringify(data) }),
+
+  separateIncident: (complaintId: string, data: { related_complaint_id: string; reason?: string }) =>
+    apiRequest(`/complaints/${complaintId}/separate-incident`, { method: 'POST', body: JSON.stringify(data) }),
+
+  officerDecision: (complaintId: string, data: { action: string; reasoning?: string; resolution_notes?: string; coverage_status?: string; issue_id?: string }) =>
+    apiRequest(`/complaints/${complaintId}/decision`, { method: 'POST', body: JSON.stringify(data) }),
+
+  adjudicateAppeal: (complaintId: string, appealId: string, data: { decision: string; notes?: string }) =>
+    apiRequest(`/complaints/${complaintId}/appeals/${appealId}/adjudicate`, { method: 'POST', body: JSON.stringify(data) }),
+
   // Work Orders
   getWorkOrders: (params?: Record<string, string>) => {
     const qs = params ? '?' + new URLSearchParams(params).toString() : '';
@@ -126,4 +147,8 @@ export const api = {
 
   // Dashboard stats
   getDashboardStats: () => apiRequest('/dashboard/stats'),
+
+  // Authority overview (senior authority)
+  getAuthorityOverview: () => apiRequest('/complaints/authority/overview'),
 };
+

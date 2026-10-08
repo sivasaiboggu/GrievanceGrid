@@ -150,11 +150,32 @@ export const mobileApi = {
     const qs = params ? '?' + new URLSearchParams(params).toString() : '';
     return apiRequest(`/work-orders${qs}`);
   },
+  getWorkOrderDetail: (id) => apiRequest(`/work-orders/${id}`),
   updateWorkOrder: (id, data) =>
     apiRequest(`/work-orders/${id}`, { method: 'PUT', body: JSON.stringify(data) }),
   completeWorkOrder: (id, data) =>
     apiRequest(`/work-orders/${id}/complete`, { method: 'POST', body: JSON.stringify(data) }),
+  createWorkOrder: (complaintId, data) =>
+    apiRequest(`/complaints/${complaintId}/work-orders`, { method: 'POST', body: JSON.stringify(data) }),
+  verifyWorkOrderCoverage: (workOrderId, data) =>
+    apiRequest(`/work-orders/${workOrderId}/verify`, { method: 'POST', body: JSON.stringify(data) }),
+  getOfficerOverview: () => apiRequest('/complaints/officer/overview'),
+  triageComplaint: (complaintId, data) =>
+    apiRequest(`/complaints/${complaintId}/triage`, { method: 'PUT', body: JSON.stringify(data) }),
+  confirmIssue: (complaintId, issueId, data) =>
+    apiRequest(`/complaints/${complaintId}/issues/${issueId}/confirm`, { method: 'PUT', body: JSON.stringify(data) }),
+  getRelatedCandidates: (complaintId) =>
+    apiRequest(`/complaints/${complaintId}/related-candidates`),
+  confirmIncident: (complaintId, data) =>
+    apiRequest(`/complaints/${complaintId}/confirm-incident`, { method: 'POST', body: JSON.stringify(data) }),
+  separateIncident: (complaintId, data) =>
+    apiRequest(`/complaints/${complaintId}/separate-incident`, { method: 'POST', body: JSON.stringify(data) }),
   submitOfficerDecision: (complaintId, data) =>
     apiRequest(`/complaints/${complaintId}/decision`, { method: 'POST', body: JSON.stringify(data) }),
+  adjudicateAppeal: (complaintId, appealId, data) =>
+    apiRequest(`/complaints/${complaintId}/appeals/${appealId}/adjudicate`, { method: 'POST', body: JSON.stringify(data) }),
+  getDepartments: () => apiRequest('/departments'),
+  getJurisdictions: () => apiRequest('/jurisdictions'),
+  getFieldWorkers: () => apiRequest('/field-workers'),
 };
 

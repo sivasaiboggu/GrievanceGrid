@@ -210,12 +210,29 @@ class OfficerDecision(Base):
     __tablename__ = "officer_decisions"
     id = Column(String, primary_key=True)
     complaint_id = Column(String, ForeignKey("complaints.id"), nullable=False)
+    issue_id = Column(String, ForeignKey("issues.id"), nullable=True)
     officer_id = Column(String, ForeignKey("users.id"), nullable=False)
-    decision = Column(String, nullable=False)  # RESOLVED, REJECTED, REASSIGNED, ESCALATED
+    decision = Column(String, nullable=False)  # RESOLVED, REQUIRE_ACTION, REQUEST_INFO, REJECTED, REASSIGNED
     reasoning = Column(Text, nullable=False)
+    response_coverage = Column(String, nullable=True)  # ADDRESSED, PARTIAL, NOT_ADDRESSED, UNCLEAR
+    previous_status = Column(String, nullable=True)
+    new_status = Column(String, nullable=True)
     created_at = Column(String, nullable=False)
 
     complaint = relationship("Complaint", back_populates="decisions")
+
+class IncidentLink(Base):
+    __tablename__ = "incident_links"
+    id = Column(String, primary_key=True)
+    incident_id = Column(String, ForeignKey("incidents.id"), nullable=True)
+    complaint_id = Column(String, ForeignKey("complaints.id"), nullable=False)
+    related_complaint_id = Column(String, ForeignKey("complaints.id"), nullable=False)
+    relationship_status = Column(String, nullable=False)  # CANDIDATE, CONFIRMED, KEPT_SEPARATE
+    candidate_reason = Column(Text, nullable=True)
+    candidate_score = Column(Float, nullable=True)
+    confirmed_by = Column(String, ForeignKey("users.id"), nullable=True)
+    confirmed_at = Column(String, nullable=True)
+    created_at = Column(String, nullable=False)
 
 class ComplaintStatusHistory(Base):
     __tablename__ = "complaint_status_history"

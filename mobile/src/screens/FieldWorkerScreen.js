@@ -57,8 +57,10 @@ export function FieldWorkerScreen({ user, onLogout }) {
 
   const handleUpdateStatus = (orderId, newStatus) => {
     Alert.alert(
-      newStatus === 'COMPLETED' ? 'Complete Work Order' : 'Update Progress',
-      `Submit on-ground field status as ${newStatus}?`,
+      newStatus === 'COMPLETED' ? 'Submit for Officer Verification' : 'Update Progress',
+      newStatus === 'COMPLETED'
+        ? 'Submit on-ground completion report? A municipal officer will verify evidentiary proof before resolving the case.'
+        : `Submit on-ground field status as ${newStatus}?`,
       [
         { text: 'Cancel', style: 'cancel' },
         {
@@ -68,14 +70,14 @@ export function FieldWorkerScreen({ user, onLogout }) {
             try {
               if (newStatus === 'COMPLETED') {
                 await mobileApi.completeWorkOrder(orderId, {
-                  remarks: 'On-site remediation completed by field technician. Evidentiary inspection verified.',
+                  remarks: 'On-site remediation completed by field technician. Submitted for officer verification.',
                 });
               } else {
                 await mobileApi.updateWorkOrder(orderId, {
                   remarks: 'Field technician on-site. Remediation actively underway.',
                 });
               }
-              Alert.alert('Success', 'Work order status updated.');
+              Alert.alert('Submitted', 'Work order submitted for municipal officer verification.');
               fetchWorkOrders();
             } catch (err) {
               Alert.alert('Action Failed', err.message || 'Unable to update work order.');
@@ -157,7 +159,7 @@ export function FieldWorkerScreen({ user, onLogout }) {
                       order.status === 'COMPLETED' ? styles.statusCompletedText : styles.statusActiveText,
                     ]}
                   >
-                    {order.status || 'ASSIGNED'}
+                    {order.status === 'COMPLETED' ? 'SUBMITTED FOR VERIFICATION' : (order.status || 'ASSIGNED')}
                   </Text>
                 </View>
               </View>
@@ -194,7 +196,7 @@ export function FieldWorkerScreen({ user, onLogout }) {
                     {actionLoading === order.id ? (
                       <ActivityIndicator size="small" color="#ffffff" />
                     ) : (
-                      <Text style={styles.actionBtnPrimaryText}>Mark Completed</Text>
+                      <Text style={styles.actionBtnPrimaryText}>Submit for Verification</Text>
                     )}
                   </TouchableOpacity>
                 </View>

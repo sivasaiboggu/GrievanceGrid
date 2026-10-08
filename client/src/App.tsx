@@ -9,6 +9,8 @@ import { ComplaintDetailScreen } from './components/citizen/ComplaintDetailScree
 import { NotificationsScreen } from './components/citizen/NotificationsScreen';
 import { ProfileScreen } from './components/citizen/ProfileScreen';
 import { AccessStates, AccessStateType } from './components/common/AccessStates';
+import { OfficerDashboard } from './components/officer/OfficerDashboard';
+import { AuthorityDashboard } from './components/authority/AuthorityDashboard';
 import { api } from './api';
 
 type CitizenTab = 'HOME' | 'MY_COMPLAINTS' | 'NOTIFICATIONS' | 'PROFILE';
@@ -44,6 +46,31 @@ const MainAppContent: React.FC = () => {
   // If unauthenticated, show the approved Stitch LoginScreen directly
   if (!user) {
     return <LoginScreen />;
+  }
+
+  // Role-based routing: Municipal Officer operational dashboard
+  if (user.role === 'MUNICIPAL_OFFICER') {
+    return <OfficerDashboard />;
+  }
+
+  // Role-based routing: Senior Authority governance dashboard
+  if (user.role === 'SENIOR_AUTHORITY') {
+    return <AuthorityDashboard />;
+  }
+
+  // Role-based routing: Field Worker uses the mobile app on the ground
+  if (user.role === 'FIELD_WORKER') {
+    return (
+      <AccessStates
+        type="WRONG_PORTAL"
+        currentUserName={user.name}
+        currentUserRole="Field Worker"
+        requestedRoute="Field Worker Mobile App"
+        onNavigateHome={() => logout()}
+        onNavigateSignIn={() => logout()}
+        onRetry={() => window.location.reload()}
+      />
+    );
   }
 
   // If testing or encountering an access state (e.g. 403, 401, wrong portal, offline)
